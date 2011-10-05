@@ -50,7 +50,6 @@
                 login.label = "Login";
                 username.enabled = true;
                 pass.enabled = true;
-
             }
         }
 
