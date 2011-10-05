@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<s:View xmlns:fx="http://ns.adobe.com/mxml/2009"
+        xmlns:s="library://ns.adobe.com/flex/spark"
+        title="Login user">
+    <s:layout>
+        <s:VerticalLayout/>
+    </s:layout>
+    <s:navigationContent>
+        <s:Button label="Back" click="navigator.popToFirstView()"/>
+    </s:navigationContent>
+    <s:Label>Login user</s:Label>
+    <s:HGroup verticalAlign="middle">
+        <s:Label verticalAlign="middle">Username:</s:Label>
+        <s:TextInput id="username" verticalCenter="center">u1002@sample.com</s:TextInput>
+    </s:HGroup>
+    <s:HGroup verticalAlign="middle">
+        <s:Label verticalAlign="middle">Password:</s:Label>
+        <s:TextInput id="pass" verticalCenter="center">u1002</s:TextInput>
+    </s:HGroup>
+    <s:Button id="login" width="100%" click="login_clickHandler(event)">Login</s:Button>
+
+    <fx:Script><![CDATA[
+        private function login_clickHandler(event: MouseEvent): void
+        {
+            trace("click!!!!");
+        }
+        ]]></fx:Script>
+</s:View>

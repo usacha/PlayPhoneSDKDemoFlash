@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:View xmlns:fx="http://ns.adobe.com/mxml/2009"
+        xmlns:s="library://ns.adobe.com/flex/spark" xmlns:views="views.*"
+        title="Start view">
+    <s:layout>
+        <s:VerticalLayout/>
+    </s:layout>
+
+    <s:List id="list" dragEnabled="true" width="100%" height="100%" change="onIndexChange(event)">
+        <s:itemRenderer>
+            <fx:Component>
+                <s:ItemRenderer>
+                    <s:states>
+                        <s:State name="normal"/>
+                        <s:State name="selected"/>
+                    </s:states>
+                    <s:Rect left="0" right="0" top="2" bottom="0" height="35">
+                        <s:fill>
+                            <s:SolidColor color="0x999999" alpha="0" alpha.selected="0.6"/>
+                        </s:fill>
+                    </s:Rect>
+                    <s:Label id="caption" top="15" left="5" right="5" verticalAlign="middle"/>
+                    <fx:Script><![CDATA[
+                        override public function set data(value: Object): void {
+                            caption.text = value.caption;
+                        }
+                        ]]></fx:Script>
+                </s:ItemRenderer>
+            </fx:Component>
+        </s:itemRenderer>
+        <s:dataProvider>
+            <s:ArrayList>
+                <views:ViewObject caption="Login" viewClass="views.Login"/>
+                <views:ViewObject caption="Dashboard" viewClass="views.Dashboard"/>
+                <views:ViewObject caption="Virtual economy" viewClass="views.VEconomy"/>
+                <views:ViewObject caption="Achievements" viewClass="views.Achievements"/>
+                <views:ViewObject caption="Dashboard control" viewClass="views.DashboardControl"/>
+                <views:ViewObject caption="Leaderboards" viewClass="views.Leaderboards"/>
+                <views:ViewObject caption="Cloud storage" viewClass="views.Cloud"/>
+                <views:ViewObject caption="User info" viewClass="views.Userinfo"/>
+                <views:ViewObject caption="Multinet basics" viewClass="views.Multinet"/>
+            </s:ArrayList>
+        </s:dataProvider>
+    </s:List>
+
+    <fx:Script><![CDATA[
+        import spark.events.IndexChangeEvent
+
+        private function onIndexChange(event: IndexChangeEvent): void
+        {
+            var list: List = List(event.currentTarget);
+            var obj: Object = list.dataProvider.getItemAt(event.newIndex);
+            navigator.pushView(obj.viewClass);
+        }
+        ]]></fx:Script>
+</s:View>
