@@ -1,31 +1,27 @@
 <?xml version="1.0"?>
-<s:View xmlns:fx="http://ns.adobe.com/mxml/2009"
-        xmlns:s="library://ns.adobe.com/flex/spark"
-        title="Dashboard">
-    <s:layout>
-        <s:VerticalLayout/>
-    </s:layout>
-    <s:navigationContent>
-        <s:Button label="Back" click="navigator.popToFirstView()"/>
-    </s:navigationContent>
-    <s:Label>Dashboard</s:Label>
-    <s:Button id="show_button" width="80%" top="10" click="show_button_clickHandler(event)">Show button</s:Button>
-    <s:Button id="hide_button" width="80%" top="10" click="hide_button_clickHandler(event)">Hide button</s:Button>
-    <s:Button id="show_dashboard" width="80%" top="10" click="show_dashboard_clickHandler(event)">Show dashboard</s:Button>
+<s:VGroup xmlns:fx="http://ns.adobe.com/mxml/2009"
+        xmlns:s="library://ns.adobe.com/flex/spark">
+    
+    <s:Button id="show_button" width="100%" top="20" click="show_button_clickHandler(event)">Show button</s:Button>
+    <s:Button id="hide_button" width="100%" top="20" click="hide_button_clickHandler(event)">Hide button</s:Button>
+    <s:Button id="show_dashboard" width="100%" top="20" click="show_dashboard_clickHandler(event)">Show dashboard</s:Button>
     <fx:Script><![CDATA[
+        import com.casmul.multinet.MNDirectHelper
+        import com.casmul.multinet.ui.common.MNDirectButton
+
         private function show_dashboard_clickHandler(event: MouseEvent): void
         {
-            trace("show_dashboard_clickHandler");
+            MNDirectHelper.showDashboard();
         }
 
         private function hide_button_clickHandler(event: MouseEvent): void
         {
-            trace("hide_button_clickHandler");
+            MNDirectButton.visible = false;
         }
 
         private function show_button_clickHandler(event: MouseEvent): void
         {
-            trace("show_button_clickHandler");
+            MNDirectButton.visible = true;
         }
         ]]></fx:Script>
-</s:View>
+</s:VGroup>

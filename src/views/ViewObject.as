@@ -5,6 +5,6 @@ package views
         [Bindable]
         public var caption: String;
         [Bindable]
-        public var viewClass: Class;
+        public var stateName: String;
     }
 }

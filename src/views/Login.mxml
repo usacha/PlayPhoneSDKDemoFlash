@@ -1,15 +1,8 @@
 <?xml version="1.0"?>
-<s:View xmlns:fx="http://ns.adobe.com/mxml/2009"
-        xmlns:s="library://ns.adobe.com/flex/spark"
-        title="Login user">
-    <s:layout>
-        <s:VerticalLayout/>
-    </s:layout>
-    <s:navigationContent>
-        <s:Button label="Back" click="navigator.popToFirstView()"/>
-    </s:navigationContent>
-    <s:Label>Login user</s:Label>
-    <s:HGroup verticalAlign="middle">
+<s:VGroup xmlns:fx="http://ns.adobe.com/mxml/2009"
+          xmlns:s="library://ns.adobe.com/flex/spark">
+
+    <s:HGroup verticalAlign="middle" top="20">
         <s:Label verticalAlign="middle">Username:</s:Label>
         <s:TextInput id="username" verticalCenter="center">u1002@sample.com</s:TextInput>
     </s:HGroup>
@@ -17,12 +10,42 @@
         <s:Label verticalAlign="middle">Password:</s:Label>
         <s:TextInput id="pass" verticalCenter="center">u1002</s:TextInput>
     </s:HGroup>
-    <s:Button id="login" width="100%" click="login_clickHandler(event)">Login</s:Button>
+    <s:Button id="login" width="100%" click="login_clickHandler(event)" top="20">Login</s:Button>
 
     <fx:Script><![CDATA[
+        import com.casmul.multinet.core.MNSession
+        import com.casmul.multinet.core.MNSessionEvent
+
         private function login_clickHandler(event: MouseEvent): void
         {
-            trace("click!!!!");
+            if( MNSession.instance.isLoggedIn )
+            {
+                MNSession.instance.addEventListener(MNSessionEvent.onSessionStatusChanged, onLogout);
+                MNSession.instance.logout();
+            }
+            else
+            {
+                MNSession.instance.addEventListener(MNSessionEvent.onDidLogin, onLogin);
+                MNSession.instance.loginWithUserLoginAndPassword(username.text, pass.text, false);
+            }
+        }
+
+        private function onLogin(event: MNSessionEvent): void
+        {
+            MNSession.instance.removeEventListener(MNSessionEvent.onDidLogin, onLogin);
+            if( MNSession.instance.isLoggedIn )
+            {
+                login.label = "Logout";
+            }
+        }
+
+        private function onLogout(event: MNSessionEvent): void
+        {
+            if( !MNSession.instance.isLoggedIn )
+            {
+                MNSession.instance.removeEventListener(MNSessionEvent.onSessionStatusChanged, onLogout);
+                login.label = "Login";
+            }
         }
         ]]></fx:Script>
-</s:View>
+</s:VGroup>
