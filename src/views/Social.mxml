@@ -1,4 +1,86 @@
 <?xml version="1.0"?>
 <s:VGroup xmlns:fx="http://ns.adobe.com/mxml/2009"
-        xmlns:s="library://ns.adobe.com/flex/spark">
+          xmlns:s="library://ns.adobe.com/flex/spark"
+          width="100%">
+    <s:Button width="100%" click="button1_clickHandler(event)">Get it!</s:Button>
+    <s:List id="list" dragEnabled="true" width="100%" height="100%">
+        <s:itemRenderer>
+            <fx:Component>
+                <s:ItemRenderer>
+                    <s:states>
+                        <s:State name="normal"/>
+                    </s:states>
+                    <s:Rect left="0" right="0" top="2" bottom="0" height="35" width="100%">
+                        <s:fill>
+                            <s:SolidColor color="0x999999" alpha="0"/>
+                        </s:fill>
+                    </s:Rect>
+                    <s:HGroup>
+                        <s:Label id="user_id" verticalAlign="middle"/>
+                        <s:VGroup>
+                                <s:Label id="user_name" verticalAlign="top"/>
+                                <s:Label id="user_online" verticalAlign="bottom"/>
+                        </s:VGroup>
+                    </s:HGroup>
+
+                    <fx:Script><![CDATA[
+                        import com.casmul.multinet.core.data.MNWSBuddyListItem
+
+                        override public function set data(value: Object): void
+                        {
+                            var friend: MNWSBuddyListItem = value as MNWSBuddyListItem;
+                            user_id.text = value.friend_user_id.toString();
+                            user_name.text = value.friend_user_nick_name;
+                            user_online.text = value.friend_user_online_now ? "online" : "offline";
+                        }
+                        ]]></fx:Script>
+                </s:ItemRenderer>
+            </fx:Component>
+        </s:itemRenderer>
+    </s:List>
+    <fx:Script><![CDATA[
+        import com.casmul.multinet.core.data.MNWSBuddyListItem
+        import com.casmul.multinet.core.ws.MNWSDefHandlerEvent
+        import com.casmul.multinet.core.ws.MNWSRequestContent
+        import com.casmul.multinet.core.ws.MNWSRequestDefHandler
+        import com.casmul.multinet.core.ws.MNWSRequestSender
+
+        import mx.collections.ArrayList
+
+        private var req_block: String;
+
+        private function button1_clickHandler(event: MouseEvent): void
+        {
+            var handler: MNWSRequestDefHandler = new MNWSRequestDefHandler();
+            handler.addEventListener(MNWSDefHandlerEvent.onRequestComplete, onComplete);
+            handler.addEventListener(MNWSDefHandlerEvent.onRequestError, onError);
+
+            var content: MNWSRequestContent = new MNWSRequestContent();
+            req_block = content.addCurrUserBuddyList();
+
+            MNWSRequestSender.instance.sendRequest(content, handler);
+        }
+
+        private function onError(event: MNWSDefHandlerEvent): void
+        {
+            CrossDemoFlash.showMessage(this, event.params.message);
+        }
+
+        private function onComplete(event: MNWSDefHandlerEvent): void
+        {
+            var buddies: Array = vectorToArray(event.params[req_block] as Vector.<MNWSBuddyListItem>);
+            list.dataProvider = new ArrayList(buddies);
+        }
+
+        private function vectorToArray(v: Object): Array
+        {
+            var len: int = v.length;
+            var ret: Array = new Array(len);
+            for (var i: int = 0; i < len; ++i)
+            {
+                ret[i] = v[i];
+            }
+            return ret;
+        }
+        ]]></fx:Script>
 </s:VGroup>

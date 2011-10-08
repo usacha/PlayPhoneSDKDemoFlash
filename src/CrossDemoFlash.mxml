@@ -19,6 +19,7 @@
         <s:State name="Cloud"/>
         <s:State name="Userinfo"/>
         <s:State name="Multinet"/>
+        <s:State name="Social"/>
     </s:states>
 
     <s:Button label="Go home"
@@ -61,6 +62,7 @@
                         <views:ViewObject caption="Cloud storage" stateName="Cloud"/>
                         <views:ViewObject caption="User info" stateName="Userinfo"/>
                         <views:ViewObject caption="Multinet basics" stateName="Multinet"/>
+                        <views:ViewObject caption="Social graph" stateName="Social"/>
                     </s:ArrayList>
                 </s:dataProvider>
             </s:List>
@@ -93,6 +95,9 @@
     </s:Panel>
     <s:Panel includeIn="Multinet" width="100%" title="Multinet basics">
         <views:Multinet/>
+    </s:Panel>
+    <s:Panel includeIn="Social" width="100%" title="Social graph">
+        <views:Social/>
     </s:Panel>
 
     <fx:Script><![CDATA[
