@@ -22,7 +22,7 @@
     <content url="file://$MODULE_DIR$/../sdks/SvnSFSDK">
       <sourceFolder url="file://$MODULE_DIR$/../sdks/SvnSFSDK" isTestSource="false" />
     </content>
-    <orderEntry type="jdk" jdkName="AIR_2.7_SDK AIR Mobile" jdkType="AIR Mobile SDK Type" />
+    <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module-library">
       <library>

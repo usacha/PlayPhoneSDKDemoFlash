@@ -21,7 +21,9 @@
         <s:State name="Multinet"/>
     </s:states>
 
-    <s:Button label="Go home" includeIn="Login, Dashboard, VEconomy, Achievements, DashboardControl, Leaderboards, Cloud, Userinfo, Multinet" click="currentState='Home'"/>
+    <s:Button label="Go home"
+              includeIn="Login, Dashboard, VEconomy, Achievements, DashboardControl, Leaderboards, Cloud, Userinfo, Multinet"
+              click="currentState='Home'"/>
 
     <s:Panel includeIn="Home" width="100%" title="Home">
         <s:VGroup>
@@ -62,19 +64,6 @@
                     </s:ArrayList>
                 </s:dataProvider>
             </s:List>
-
-            <fx:Script><![CDATA[
-                import spark.events.IndexChangeEvent
-
-                private function onIndexChange(event: IndexChangeEvent): void
-                {
-                    var list: List = List(event.currentTarget);
-                    list.selectedItems = null;
-                    list.selectedIndices = null;
-                    var obj: ViewObject = list.dataProvider.getItemAt(event.newIndex) as ViewObject;
-                    currentState = obj.stateName;
-                }
-                ]]></fx:Script>
         </s:VGroup>
     </s:Panel>
 
@@ -84,36 +73,60 @@
     <s:Panel includeIn="Dashboard" width="100%" title="Dashboard">
         <views:Dashboard/>
     </s:Panel>
-    <s:Panel includeIn="VEconomy" width="100%"  title="Virtual economy">
+    <s:Panel includeIn="VEconomy" width="100%" title="Virtual economy">
         <views:VEconomy/>
     </s:Panel>
-    <s:Panel includeIn="Achievements" width="100%"  title="Achievements">
+    <s:Panel includeIn="Achievements" width="100%" title="Achievements">
         <views:Achievements/>
     </s:Panel>
-    <s:Panel includeIn="DashboardControl" width="100%"  title="Dashboard control">
+    <s:Panel includeIn="DashboardControl" width="100%" title="Dashboard control">
         <views:DashboardControl/>
     </s:Panel>
-    <s:Panel includeIn="Leaderboards" width="100%"  title="Leaderboards">
+    <s:Panel includeIn="Leaderboards" width="100%" title="Leaderboards">
         <views:Leaderboards/>
     </s:Panel>
-    <s:Panel includeIn="Cloud" width="100%"  title="Cloud storage">
+    <s:Panel includeIn="Cloud" width="100%" title="Cloud storage">
         <views:Cloud/>
     </s:Panel>
-    <s:Panel includeIn="Userinfo" width="100%"  title="User info">
+    <s:Panel includeIn="Userinfo" width="100%" title="User info">
         <views:Userinfo/>
     </s:Panel>
-    <s:Panel includeIn="Multinet" width="100%"  title="Multinet basics">
+    <s:Panel includeIn="Multinet" width="100%" title="Multinet basics">
         <views:Multinet/>
     </s:Panel>
 
     <fx:Script><![CDATA[
         import com.casmul.multinet.MNDirect
+        import com.casmul.multinet.MNDirectEvent
+        import com.casmul.multinet.core.MNSession
+        import com.casmul.multinet.core.MNSessionEvent
+        import com.casmul.multinet.core.MNSessionSysEvent
         import com.casmul.multinet.ui.MNWebUIAirStarter
-        import com.casmul.multinet.ui.MNWebUIStarter
         import com.casmul.multinet.ui.common.MNDirectButton
         import com.casmul.multinet.ui.common.MNDirectPopup
 
         import mx.events.FlexEvent
+        import mx.managers.PopUpManager
+
+        import spark.events.IndexChangeEvent
+
+        import views.Popup
+
+        private function onIndexChange(event: IndexChangeEvent): void
+        {
+            var list: List = List(event.currentTarget);
+            list.selectedItems = null;
+            list.selectedIndices = null;
+            var obj: ViewObject = list.dataProvider.getItemAt(event.newIndex) as ViewObject;
+            currentState = obj.stateName;
+        }
+
+        public static function showMessage(parent: DisplayObject, message: String): void
+        {
+            var win: Popup = Popup(PopUpManager.createPopUp(parent, Popup, true));
+            win.mesage.text = message;
+            PopUpManager.centerPopUp(win);
+        }
 
         private function initializeHandler(event: FlexEvent): void
         {
@@ -134,8 +147,21 @@
             //            MNDirect.addEventListener(MNDirectEvent.onErrorOccurred, onCancelGame);
             //            MNDirect.addEventListener(MNDirectEvent.onDoCancelGame, onCancelGame);
             //            MNDirect.addEventListener(MNDirectEvent.onDoFinishGame, onFinishGame);
-            //            MNDirect.addEventListener(MNDirectEvent.onDirectSessionReady, onDirectReady);
+            MNDirect.addEventListener(MNDirectEvent.onDirectSessionReady, onDirectReady);
 
+        }
+
+        private function onDirectReady(event: MNDirectEvent): void
+        {
+            MNSession.instance.addEventListener(MNSessionEvent.onErrorOccurred, onError);
+        }
+
+        private function onError(event: MNSessionEvent): void
+        {
+            if( event._isError )
+            {
+                showMessage( this, event._errMsg );
+            }
         }
         ]]></fx:Script>
 </s:Application>
