@@ -1,4 +1,31 @@
 <?xml version="1.0"?>
 <s:VGroup xmlns:fx="http://ns.adobe.com/mxml/2009"
-        xmlns:s="library://ns.adobe.com/flex/spark">
+          xmlns:s="library://ns.adobe.com/flex/spark">
+    <s:Label>Type some text to save cloud storage</s:Label>
+    <s:TextInput id="data" width="100%"></s:TextInput>
+    <s:Button width="100%" click="button1_clickHandler(event)">Upload data</s:Button>
+    <s:Button width="100%">Reload data</s:Button>
+    <fx:Script><![CDATA[
+        import com.casmul.multinet.MNDirect
+        import com.casmul.multinet.core.MNSession
+
+        private function button1_clickHandler(event: MouseEvent): void
+        {
+            if( MNDirect.getSession()!=null )
+            {
+                if( MNSession.instance.isLoggedIn )
+                {
+                    MNDirect.gameCookiesProvider.uploadUserCookie( 10, data.text );
+                }
+                else
+                {
+                    CrossDemoFlash.showMessage( this, "User should be logged in!" );
+                }
+            }
+            else
+            {
+                CrossDemoFlash.showMessage( this, "MNSession is not initialized!" );
+            }
+        }
+        ]]></fx:Script>
 </s:VGroup>
