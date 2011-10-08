@@ -1,4 +1,36 @@
 <?xml version="1.0"?>
 <s:VGroup xmlns:fx="http://ns.adobe.com/mxml/2009"
-        xmlns:s="library://ns.adobe.com/flex/spark">
+          xmlns:s="library://ns.adobe.com/flex/spark">
+    <s:Button width="100%" top="20" bottom="20" click="button1_clickHandler(event)">Login screen</s:Button>
+    <s:Button width="100%" top="20" bottom="20" click="button2_clickHandler(event)">Leaderboards</s:Button>
+    <s:Button width="100%" top="20" bottom="20" click="button3_clickHandler(event)">Achievements</s:Button>
+    <s:Button width="100%" top="20" bottom="20" click="button4_clickHandler(event)">Home</s:Button>
+    <fx:Script><![CDATA[
+        import com.casmul.multinet.MNDirect
+        import com.casmul.multinet.MNDirectHelper
+
+        private function button1_clickHandler(event: MouseEvent): void
+        {
+            MNDirect.execAppCommand("jumpToUserLogin", null);
+            MNDirectHelper.showDashboard();
+        }
+
+        private function button2_clickHandler(event: MouseEvent): void
+        {
+            MNDirect.execAppCommand("jumpToLeaderboard", null);
+            MNDirectHelper.showDashboard();
+        }
+
+        private function button3_clickHandler(event: MouseEvent): void
+        {
+            MNDirect.execAppCommand("jumpToAchievements", null);
+            MNDirectHelper.showDashboard();
+        }
+
+        private function button4_clickHandler(event: MouseEvent): void
+        {
+            MNDirect.execAppCommand("jumpToUserHome", null);
+            MNDirectHelper.showDashboard();
+        }
+        ]]></fx:Script>
 </s:VGroup>
