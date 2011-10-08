@@ -5,17 +5,18 @@
 
     <s:HGroup verticalAlign="middle" top="20">
         <s:Label verticalAlign="middle">Username:</s:Label>
-        <s:TextInput id="username" verticalCenter="center">u1002@sample.com</s:TextInput>
+        <s:Label id="username" verticalCenter="center"/>
     </s:HGroup>
-    <s:HGroup verticalAlign="middle">
-        <s:Label verticalAlign="middle">Password:</s:Label>
-        <s:TextInput id="pass" verticalCenter="center">u1002</s:TextInput>
-    </s:HGroup>
+    <!--<s:HGroup verticalAlign="middle">-->
+        <!--<s:Label verticalAlign="middle">Password:</s:Label>-->
+        <!--<s:TextInput id="pass" verticalCenter="center">u1002</s:TextInput>-->
+    <!--</s:HGroup>-->
     <s:Button id="login" width="100%" click="login_clickHandler(event)" top="20">Login</s:Button>
 
     <fx:Script><![CDATA[
         import com.casmul.multinet.MNDirect
         import com.casmul.multinet.MNDirectEvent
+        import com.casmul.multinet.MNDirectHelper
         import com.casmul.multinet.core.MNSession
         import com.casmul.multinet.core.MNSessionEvent
 
@@ -25,11 +26,12 @@
         {
             if (MNSession.instance.isLoggedIn)
             {
-              MNSession.instance.logout();
+                MNSession.instance.logout();
             }
             else
             {
-                MNSession.instance.loginWithUserLoginAndPassword(username.text, pass.text, false);
+                MNDirectHelper.showDashboard();
+//                MNSession.instance.loginWithUserLoginAndPassword(username.text, pass.text, false);
             }
         }
 
@@ -38,8 +40,9 @@
             if (MNSession.instance.isLoggedIn)
             {
                 login.label = "Logout";
-                username.enabled = false;
-                pass.enabled = false;
+                username.text = MNSession.instance.getMyUserInfo().userName;
+//                username.enabled = false;
+//                pass.enabled = false;
             }
         }
 
@@ -48,8 +51,9 @@
             if (!MNSession.instance.isLoggedIn)
             {
                 login.label = "Login";
-                username.enabled = true;
-                pass.enabled = true;
+                username.text = "";
+//                username.enabled = true;
+//                pass.enabled = true;
             }
         }
 
