@@ -1,5 +1,31 @@
 <?xml version="1.0"?>
 <s:VGroup xmlns:fx="http://ns.adobe.com/mxml/2009"
-        xmlns:s="library://ns.adobe.com/flex/spark">
-    <s:Label>There should be virtual economy demo</s:Label>
+          xmlns:s="library://ns.adobe.com/flex/spark"
+          xmlns:veconomy="views.veconomy.*"
+          width="100%">
+
+    <s:states>
+        <s:State name="Main"/>
+        <s:State name="PPStore"/>
+        <s:State name="VItems"/>
+        <s:State name="UserItems"/>
+    </s:states>
+
+    <s:Button includeIn="PPStore, VItems, UserItems" width="100%" click="currentState='Main'">Back</s:Button>
+    <s:Button includeIn="Main" width="100%" click="currentState='PPStore'">Playphone store</s:Button>
+    <s:Button includeIn="Main" width="100%" click="currentState='VItems'">Virtual items</s:Button>
+    <s:Button includeIn="Main" width="100%" click="currentState='UserItems'">User items</s:Button>
+
+    <s:Panel includeIn="VItems" width="100%" title="Virtual items">
+        <veconomy:VItems/>
+    </s:Panel>
+
+    <s:Panel includeIn="PPStore" width="100%" title="Playphone store">
+        <veconomy:PPStore/>
+    </s:Panel>
+
+    <s:Panel includeIn="UserItems" width="100%" title="User items">
+        <veconomy:UserItems/>
+    </s:Panel>
+
 </s:VGroup>
