@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <s:VGroup xmlns:fx="http://ns.adobe.com/mxml/2009"
         xmlns:s="library://ns.adobe.com/flex/spark">
-    
+
     <s:Button id="show_button" width="100%" top="20" click="show_button_clickHandler(event)">Show button</s:Button>
     <s:Button id="hide_button" width="100%" top="20" click="hide_button_clickHandler(event)">Hide button</s:Button>
     <s:Button id="show_dashboard" width="100%" top="20" click="show_dashboard_clickHandler(event)">Show dashboard</s:Button>

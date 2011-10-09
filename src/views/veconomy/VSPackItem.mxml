@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:ItemRenderer xmlns:fx="http://ns.adobe.com/mxml/2009"
+                xmlns:s="library://ns.adobe.com/flex/spark"
+                autoDrawBackground="false">
+
+    <s:states>
+        <s:State name="normal"/>
+        <s:State name="selected"/>
+    </s:states>
+
+    <s:VGroup>
+        <s:HGroup includeIn="normal, selected" verticalCenter="0" horizontalCenter="0">
+            <s:Label id="pack_id"/>
+            <s:Label id="pack_name"/>
+            <s:Image width="80" height="80" source="{data.image_url}"/>
+        </s:HGroup>
+        <s:VGroup includeIn="selected">
+            <s:Label id="item_name"/>
+            <s:Label id="category"/>
+            <s:Label id="qantity"/>
+            <s:Label id="price"/>
+            <s:Label id="is_hidden"/>
+            <s:Label id="hold_sales"/>
+            <s:Label id="description"/>
+            <s:Label id="application_param"/>
+        </s:VGroup>
+    </s:VGroup>
+
+</s:ItemRenderer>
