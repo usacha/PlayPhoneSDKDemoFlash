@@ -1,30 +1,111 @@
 <?xml version="1.0"?>
 <s:VGroup xmlns:fx="http://ns.adobe.com/mxml/2009"
-          xmlns:s="library://ns.adobe.com/flex/spark">
+          xmlns:s="library://ns.adobe.com/flex/spark"
+          initialize="initializeHandler(event)"
+          width="100%">
+    <s:Label>Put data key(integer value) here</s:Label>
+    <s:TextInput id="cookie_key" width="100%"></s:TextInput>
+
     <s:Label>Type some text to save cloud storage</s:Label>
-    <s:TextInput id="data" width="100%"></s:TextInput>
-    <s:Button width="100%" click="button1_clickHandler(event)">Upload data</s:Button>
-    <s:Button width="100%">Reload data</s:Button>
+    <s:TextInput id="cookie_val" width="100%"></s:TextInput>
+
+    <s:Button click="button1_clickHandler(event)" width="100%">Upload data</s:Button>
+
+    <s:Label>Put data key(integer value) here for download</s:Label>
+    <s:TextInput id="dwcookie_key" width="100%"></s:TextInput>
+    <s:Button width="100%" click="button2_clickHandler(event)">Reload data</s:Button>
     <fx:Script><![CDATA[
         import com.casmul.multinet.MNDirect
+        import com.casmul.multinet.MNDirectEvent
         import com.casmul.multinet.core.MNSession
+        import com.casmul.multinet.providers.MNGameCookiesProvider
+        import com.casmul.multinet.providers.MNPluginEvent
+
+        import mx.events.FlexEvent
 
         private function button1_clickHandler(event: MouseEvent): void
         {
-            if( MNDirect.getSession()!=null )
+            if (MNDirect.getSession() != null)
             {
-                if( MNSession.instance.isLoggedIn )
+                if (MNSession.instance.isLoggedIn)
                 {
-                    MNDirect.gameCookiesProvider.uploadUserCookie( 10, data.text );
+                    MNDirect.gameCookiesProvider.uploadUserCookie(int(cookie_key.text), cookie_val.text);
                 }
                 else
                 {
-                    CrossDemoFlash.showMessage( this, "User should be logged in!" );
+                    CrossDemoFlash.showMessage(this, "User should be logged in!");
                 }
             }
             else
             {
-                CrossDemoFlash.showMessage( this, "MNSession is not initialized!" );
+                CrossDemoFlash.showMessage(this, "MNSession is not initialized!");
+            }
+        }
+
+        private function initializeHandler(event: FlexEvent): void
+        {
+            trace("Login initializeHandler");
+            if (MNDirect.getSession() == null)
+            {
+                MNDirect.addEventListener(MNDirectEvent.onDirectSessionReady, onSessionReady);
+            }
+            else
+            {
+                onSessionReady(null);
+            }
+        }
+
+        private function onSessionReady(event: MNDirectEvent): void
+        {
+            MNDirect.gameCookiesProvider.addEventListener(MNGameCookiesProvider.onGameCookieDownloadFailedWithError,
+                                                          downloadError);
+            MNDirect.gameCookiesProvider.addEventListener(MNGameCookiesProvider.onGameCookieDownloadSucceeded,
+                                                          downloadComplete);
+            MNDirect.gameCookiesProvider.addEventListener(MNGameCookiesProvider.onGameCookieUploadFailedWithError,
+                                                          uploadError);
+            MNDirect.gameCookiesProvider.addEventListener(MNGameCookiesProvider.onGameCookieUploadSucceeded,
+                                                          uploadComplete);
+        }
+
+        private function downloadError(event: MNPluginEvent): void
+        {
+            CrossDemoFlash.showMessage(this,
+                                       "Could not download cookie (id=" + event.params.key + ") " + event.params.error);
+        }
+
+        private function downloadComplete(event: MNPluginEvent): void
+        {
+            CrossDemoFlash.showMessage(this,
+                                       "Cookie (id=" + event.params.key + " value=" + event.params.cookie + ") download succsessfuly");
+        }
+
+        private function uploadError(event: MNPluginEvent): void
+        {
+            CrossDemoFlash.showMessage(this,
+                                       "Could not download cookie (id=" + event.params.key + ") " + event.params.error);
+        }
+
+        private function uploadComplete(event: MNPluginEvent): void
+        {
+            CrossDemoFlash.showMessage(this, "Cookie uploaded succsessfuly");
+        }
+
+        private function button2_clickHandler(event: MouseEvent): void
+        {
+            if (MNDirect.getSession() != null)
+            {
+                if (MNSession.instance.isLoggedIn)
+                {
+                    MNDirect.gameCookiesProvider.downloadUserCookie( int(dwcookie_key.text) );
+                }
+                else
+                {
+                    CrossDemoFlash.showMessage(this, "User should be logged in!");
+                }
+            }
+            else
+            {
+                CrossDemoFlash.showMessage(this, "MNSession is not initialized!");
             }
         }
         ]]></fx:Script>

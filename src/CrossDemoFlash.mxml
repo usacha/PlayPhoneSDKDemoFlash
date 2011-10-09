@@ -23,7 +23,7 @@
     </s:states>
 
     <s:Button label="Go home"
-              includeIn="Login, Dashboard, VEconomy, Achievements, DashboardControl, Leaderboards, Cloud, Userinfo, Multinet"
+              includeIn="Login, Dashboard, VEconomy, Achievements, DashboardControl, Leaderboards, Cloud, Userinfo, Multinet, Social"
               click="currentState='Home'"/>
 
     <s:Panel includeIn="Home" width="100%" title="Home">
