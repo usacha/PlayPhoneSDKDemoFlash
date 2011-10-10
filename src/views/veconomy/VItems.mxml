@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <s:VGroup xmlns:fx="http://ns.adobe.com/mxml/2009"
-          xmlns:s="library://ns.adobe.com/flex/spark" xmlns:mx="library://ns.adobe.com/flex/mx" width="100%">
-    <s:Label>There should be virtual economy demo</s:Label>
+          xmlns:s="library://ns.adobe.com/flex/spark"
+          xmlns:mx="library://ns.adobe.com/flex/mx" width="100%" initialize="initializeHandler(event)">
 
     <s:states>
         <s:State name="Items"/>
@@ -74,12 +74,14 @@
         import com.playphone.multinet.MNDirectEvent
         import com.playphone.multinet.providers.MNVitemsProvider
 
+        import mx.collections.ArrayList
+
         import mx.events.FlexEvent
 
         import spark.events.IndexChangeEvent
 
         private var isSessionReady: Boolean = false;
-        private var isStateReady: Array = [false, false, false];
+        private var isStateReady: Array = [false, false];
         private var updateFunctions: Vector.<Function>
 
         private function initializeHandler(event: FlexEvent): void
@@ -114,11 +116,34 @@
 
         private function updateItems(): void
         {
-//            MNDirect.virtualItemsProvider.
+            var currencies: Array = [];
+
+            var items: Array = MNDirect.virtualItemsProvider.getGameVItemsList();
+            for each(var item: Object in items)
+            {
+                if ((item.model & 1) == 0)
+                {
+                    currencies.push( item );
+                }
+            }
+
+            items_list.dataProvider = new ArrayList( currencies );
         }
 
         private function updateCurrencies(): void
         {
+            var currencies: Array = [];
+
+            var items: Array = MNDirect.virtualItemsProvider.getGameVItemsList();
+            for each(var item: Object in items)
+            {
+                if ((item.model & 1) != 0)
+                {
+                    currencies.push( item );
+                }
+            }
+
+            currencies_list.dataProvider = new ArrayList( currencies );
 
         }
 
