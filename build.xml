@@ -1,0 +1,45 @@
+<project name="Build in-page mathcomp" basedir=".">
+
+    <property file="build.properties"/>
+
+    <taskdef resource="flexTasks.tasks" classpath="${FLEX_HOME}/ant/lib/flexTasks.jar"/>
+
+    <target name="compile Mathcomp Game">
+
+        <delete dir="${out}"/>
+
+        <mxmlc file="${src}/CrossDemoFlash.mxml"
+               output="${out}/${SWFName}"
+               debug="true"
+               optimize="false"
+               incremental="false"
+               default-frame-rate="30"
+               locale="en_US"
+               static-link-runtime-shared-libraries="true">
+
+            <default-size width="320" height="480"/>
+
+            <source-path path-element="${basedir}/src"/>
+            <source-path path-element="${pp_sdk}"/>
+            <!--<source-path path-element="${mnsdk_src}"/>-->
+            <!--<source-path path-element="${sfsdk_src}"/>-->
+            <!--<source-path path-element="${mp_src}"/>-->
+
+            <load-config filename="${FLEX_HOME}/frameworks/flex-config.xml"/>
+
+            <include-libraries dir="${pp_sdk}/res">
+                <include name="*.swc"/>
+            </include-libraries>
+        </mxmlc>
+    </target>
+
+    <target name="move game to server" depends="compile Mathcomp Game">
+        <scp port="22" trust="true"
+             todir="ausachov@pluto.vn.ua:/home/ausachov/anton.pluto.vn.ua/web/some"
+             keyfile="C:\ausachev_o.ppk" sftp="true">
+            <fileset dir="${basedir}\out">
+                <include name="**/*.swf"/>
+            </fileset>
+        </scp>
+    </target>
+</project>
