@@ -14,11 +14,11 @@
     <s:Button id="login" width="100%" click="login_clickHandler(event)" top="20">Login</s:Button>
 
     <fx:Script><![CDATA[
-        import com.casmul.multinet.MNDirect
-        import com.casmul.multinet.MNDirectEvent
-        import com.casmul.multinet.MNDirectHelper
-        import com.casmul.multinet.core.MNSession
-        import com.casmul.multinet.core.MNSessionEvent
+        import com.playphone.multinet.MNDirect
+        import com.playphone.multinet.MNDirectEvent
+        import com.playphone.multinet.MNDirectHelper
+        import com.playphone.multinet.core.MNSession
+        import com.playphone.multinet.core.MNSessionEvent
 
         import mx.events.FlexEvent
 
@@ -37,13 +37,10 @@
 
         private function onLogin(event: MNSessionEvent): void
         {
-            if (MNSession.instance.isLoggedIn)
-            {
                 login.label = "Logout";
                 username.text = MNSession.instance.getMyUserInfo().userName;
 //                username.enabled = false;
 //                pass.enabled = false;
-            }
         }
 
         private function onLogout(event: MNSessionEvent): void
@@ -59,7 +56,6 @@
 
         private function loginInitializeHandler(event: FlexEvent): void
         {
-            trace("Login initializeHandler");
             if (MNDirect.getSession() == null)
             {
                 MNDirect.addEventListener(MNDirectEvent.onDirectSessionReady, onSessionReady);
@@ -74,6 +70,11 @@
         {
             MNSession.instance.addEventListener(MNSessionEvent.onDidLogin, onLogin);
             MNSession.instance.addEventListener(MNSessionEvent.onSessionStatusChanged, onLogout);
+
+            if( MNSession.instance.isLoggedIn )
+            {
+                onLogin(null);
+            }
         }
         ]]></fx:Script>
 </s:VGroup>

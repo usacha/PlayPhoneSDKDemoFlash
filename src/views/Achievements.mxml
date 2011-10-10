@@ -30,9 +30,9 @@
         </s:itemRenderer>
     </s:List>
     <fx:Script><![CDATA[
-        import com.casmul.multinet.MNDirect
-        import com.casmul.multinet.MNDirectEvent
-        import com.casmul.multinet.providers.MNAchievementsProvider
+        import com.playphone.multinet.MNDirect
+        import com.playphone.multinet.MNDirectEvent
+        import com.playphone.multinet.providers.MNAchievementsProvider
 
         import mx.collections.ArrayCollection
 

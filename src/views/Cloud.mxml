@@ -4,22 +4,22 @@
           initialize="initializeHandler(event)"
           width="100%">
     <s:Label>Put data key(integer value) here</s:Label>
-    <s:TextInput id="cookie_key" width="100%"></s:TextInput>
+    <s:TextInput id="cookie_key" width="100%"/>
 
     <s:Label>Type some text to save cloud storage</s:Label>
-    <s:TextInput id="cookie_val" width="100%"></s:TextInput>
+    <s:TextInput id="cookie_val" width="100%"/>
 
     <s:Button click="button1_clickHandler(event)" width="100%">Upload data</s:Button>
 
     <s:Label>Put data key(integer value) here for download</s:Label>
-    <s:TextInput id="dwcookie_key" width="100%"></s:TextInput>
+    <s:TextInput id="dwcookie_key" width="100%"/>
     <s:Button width="100%" click="button2_clickHandler(event)">Reload data</s:Button>
     <fx:Script><![CDATA[
-        import com.casmul.multinet.MNDirect
-        import com.casmul.multinet.MNDirectEvent
-        import com.casmul.multinet.core.MNSession
-        import com.casmul.multinet.providers.MNGameCookiesProvider
-        import com.casmul.multinet.providers.MNPluginEvent
+        import com.playphone.multinet.MNDirect
+        import com.playphone.multinet.MNDirectEvent
+        import com.playphone.multinet.core.MNSession
+        import com.playphone.multinet.providers.MNGameCookiesProvider
+        import com.playphone.multinet.providers.MNPluginEvent
 
         import mx.events.FlexEvent
 
@@ -82,7 +82,7 @@
         private function uploadError(event: MNPluginEvent): void
         {
             CrossDemoFlash.showMessage(this,
-                                       "Could not download cookie (id=" + event.params.key + ") " + event.params.error);
+                                       "Could not upload cookie (id=" + event.params.key + ") " + event.params.error);
         }
 
         private function uploadComplete(event: MNPluginEvent): void

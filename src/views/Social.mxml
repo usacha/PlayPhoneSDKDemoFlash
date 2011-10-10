@@ -24,11 +24,10 @@
                     </s:HGroup>
 
                     <fx:Script><![CDATA[
-                        import com.casmul.multinet.core.data.MNWSBuddyListItem
+                        import com.playphone.multinet.core.data.MNWSBuddyListItem
 
                         override public function set data(value: Object): void
                         {
-                            var friend: MNWSBuddyListItem = value as MNWSBuddyListItem;
                             user_id.text = value.friend_user_id.toString();
                             user_name.text = value.friend_user_nick_name;
                             user_online.text = value.friend_user_online_now ? "online" : "offline";
@@ -39,11 +38,11 @@
         </s:itemRenderer>
     </s:List>
     <fx:Script><![CDATA[
-        import com.casmul.multinet.core.data.MNWSBuddyListItem
-        import com.casmul.multinet.core.ws.MNWSDefHandlerEvent
-        import com.casmul.multinet.core.ws.MNWSRequestContent
-        import com.casmul.multinet.core.ws.MNWSRequestDefHandler
-        import com.casmul.multinet.core.ws.MNWSRequestSender
+        import com.playphone.multinet.core.data.MNWSBuddyListItem
+        import com.playphone.multinet.core.ws.MNWSDefHandlerEvent
+        import com.playphone.multinet.core.ws.MNWSRequestContent
+        import com.playphone.multinet.core.ws.MNWSRequestDefHandler
+        import com.playphone.multinet.core.ws.MNWSRequestSender
 
         import mx.collections.ArrayList
 

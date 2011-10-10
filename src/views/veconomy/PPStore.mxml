@@ -91,11 +91,11 @@
     </s:VGroup>
 
     <fx:Script><![CDATA[
-        import com.casmul.multinet.MNDirect
-        import com.casmul.multinet.MNDirectEvent
-        import com.casmul.multinet.MNDirectHelper
-        import com.casmul.multinet.providers.MNPluginEvent
-        import com.casmul.multinet.providers.MNVShopProvider
+        import com.playphone.multinet.MNDirect
+        import com.playphone.multinet.MNDirectEvent
+        import com.playphone.multinet.MNDirectHelper
+        import com.playphone.multinet.providers.MNPluginEvent
+        import com.playphone.multinet.providers.MNVShopProvider
 
         import mx.collections.ArrayList
         import mx.events.FlexEvent

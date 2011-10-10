@@ -6,8 +6,8 @@
     <s:Button width="100%" top="20" bottom="20" click="button3_clickHandler(event)">Achievements</s:Button>
     <s:Button width="100%" top="20" bottom="20" click="button4_clickHandler(event)">Home</s:Button>
     <fx:Script><![CDATA[
-        import com.casmul.multinet.MNDirect
-        import com.casmul.multinet.MNDirectHelper
+        import com.playphone.multinet.MNDirect
+        import com.playphone.multinet.MNDirectHelper
 
         private function button1_clickHandler(event: MouseEvent): void
         {

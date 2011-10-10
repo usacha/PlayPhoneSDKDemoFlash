@@ -2,7 +2,7 @@
 <s:Application xmlns:fx="http://ns.adobe.com/mxml/2009"
                xmlns:s="library://ns.adobe.com/flex/spark"
                xmlns:views="views.*"
-               initialize="initializeHandler(event)">
+               initialize="initializeHandler(event)" width="320" height="480">
 
     <s:layout>
         <s:VerticalLayout/>
@@ -26,7 +26,7 @@
               includeIn="Login, Dashboard, VEconomy, Achievements, DashboardControl, Leaderboards, Cloud, Userinfo, Multinet, Social"
               click="currentState='Home'"/>
 
-    <s:Panel includeIn="Home" width="100%" title="Home">
+    <s:Panel includeIn="Home" width="100%" height="100%" title="Home">
         <s:VGroup>
             <s:List id="list" dragEnabled="true" width="100%" height="100%" change="onIndexChange(event)">
                 <s:itemRenderer>
@@ -41,7 +41,7 @@
                                     <s:SolidColor color="0x999999" alpha="0" alpha.selected="0.6"/>
                                 </s:fill>
                             </s:Rect>
-                            <s:Label id="caption" top="15" left="5" right="5" width="300"/>
+                            <s:Label id="caption" top="15" left="5" right="5" width="320"/>
                             <fx:Script><![CDATA[
                                 override public function set data(value: Object): void
                                 {
@@ -69,46 +69,48 @@
         </s:VGroup>
     </s:Panel>
 
-    <s:Panel includeIn="Login" width="100%" title="Login">
+    <s:Panel includeIn="Login" width="100%" height="100%" title="Login">
         <views:Login/>
     </s:Panel>
-    <s:Panel includeIn="Dashboard" width="100%" title="Dashboard">
+    <s:Panel includeIn="Dashboard" width="100%" height="100%" title="Dashboard">
         <views:Dashboard/>
     </s:Panel>
-    <s:Panel includeIn="VEconomy" width="100%" title="Virtual economy">
+    <s:Panel includeIn="VEconomy" width="100%" height="100%" title="Virtual economy">
         <views:VEconomy/>
     </s:Panel>
-    <s:Panel includeIn="Achievements" width="100%" title="Achievements">
+    <s:Panel includeIn="Achievements" width="100%" height="100%" title="Achievements">
         <views:Achievements/>
     </s:Panel>
-    <s:Panel includeIn="DashboardControl" width="100%" title="Dashboard control">
+    <s:Panel includeIn="DashboardControl" width="100%" height="100%" title="Dashboard control">
         <views:DashboardControl/>
     </s:Panel>
-    <s:Panel includeIn="Leaderboards" width="100%" title="Leaderboards">
+    <s:Panel includeIn="Leaderboards" width="100%" height="100%" title="Leaderboards">
         <views:Leaderboards/>
     </s:Panel>
-    <s:Panel includeIn="Cloud" width="100%" title="Cloud storage">
+    <s:Panel includeIn="Cloud" width="100%" height="100%" title="Cloud storage">
         <views:Cloud/>
     </s:Panel>
-    <s:Panel includeIn="Userinfo" width="100%" title="User info">
+    <s:Panel includeIn="Userinfo" width="100%" height="100%" title="User info">
         <views:Userinfo/>
     </s:Panel>
-    <s:Panel includeIn="Multinet" width="100%" title="Multinet basics">
+    <s:Panel includeIn="Multinet" width="100%" height="100%" title="Multinet basics">
         <views:Multinet/>
     </s:Panel>
-    <s:Panel includeIn="Social" width="100%" title="Social graph">
+    <s:Panel includeIn="Social" width="100%" height="100%" title="Social graph">
         <views:Social/>
     </s:Panel>
 
     <fx:Script><![CDATA[
-        import com.casmul.multinet.MNDirect
-        import com.casmul.multinet.MNDirectEvent
-        import com.casmul.multinet.core.MNSession
-        import com.casmul.multinet.core.MNSessionEvent
-        import com.casmul.multinet.core.MNSessionSysEvent
-        import com.casmul.multinet.ui.MNWebUIAirStarter
-        import com.casmul.multinet.ui.common.MNDirectButton
-        import com.casmul.multinet.ui.common.MNDirectPopup
+
+        import com.playphone.multinet.MNDirectEvent
+        import com.playphone.multinet.core.MNSession
+        import com.playphone.multinet.core.MNSessionEvent
+        import com.playphone.multinet.ui.MNWebUIStarter
+        import com.playphone.multinet.ui.common.MNDirectButton
+        import com.playphone.multinet.ui.common.MNDirectPopup
+        import com.playphone.multinet.utils.MNLog
+        import com.playphone.multinet.MNDirect
+        import com.playphone.multinet.ui.MNWebUIAirStarter
 
         import mx.events.FlexEvent
         import mx.managers.PopUpManager
@@ -141,19 +143,18 @@
 
         private function resizeHandler(event: Event): void
         {
-
+            MNLog.isDebug = true;
             MNDirect.init(5, "00000005-00000005-00000005-00000005");
             MNDirect.attachUI(new MNWebUIAirStarter(this.stage));
             MNDirectPopup.init(MNDirectPopup.MNDIRECTPOPUP_NEW_HI_SCORES | MNDirectPopup.MNDIRECTPOPUP_ACHIEVEMENTS |
                                MNDirectPopup.MNDIRECTPOPUP_WELCOME, this.stage);
-            MNDirectButton.init(MNDirectButton.MNDIRECTBUTTON_TOP, this.stage);
+            MNDirectButton.init(MNDirectButton.MNDIRECTBUTTON_TOPRIGHT, this.stage);
             MNDirectButton.visible = true;
             //            MNDirect.addEventListener(MNDirectEvent.onDoStartGameWithParams, onStartGame);
             //            MNDirect.addEventListener(MNDirectEvent.onErrorOccurred, onCancelGame);
             //            MNDirect.addEventListener(MNDirectEvent.onDoCancelGame, onCancelGame);
             //            MNDirect.addEventListener(MNDirectEvent.onDoFinishGame, onFinishGame);
             MNDirect.addEventListener(MNDirectEvent.onDirectSessionReady, onDirectReady);
-
         }
 
         private function onDirectReady(event: MNDirectEvent): void
@@ -163,9 +164,9 @@
 
         private function onError(event: MNSessionEvent): void
         {
-            if( event._isError )
+            if (event._isError)
             {
-                showMessage( this, event._errMsg );
+                showMessage(this, event._errMsg);
             }
         }
         ]]></fx:Script>

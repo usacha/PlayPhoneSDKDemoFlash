@@ -6,8 +6,8 @@
     <s:Button id="hide_button" width="100%" top="20" click="hide_button_clickHandler(event)">Hide button</s:Button>
     <s:Button id="show_dashboard" width="100%" top="20" click="show_dashboard_clickHandler(event)">Show dashboard</s:Button>
     <fx:Script><![CDATA[
-        import com.casmul.multinet.MNDirectHelper
-        import com.casmul.multinet.ui.common.MNDirectButton
+        import com.playphone.multinet.MNDirectHelper
+        import com.playphone.multinet.ui.common.MNDirectButton
 
         private function show_dashboard_clickHandler(event: MouseEvent): void
         {

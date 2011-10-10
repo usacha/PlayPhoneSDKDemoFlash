@@ -18,11 +18,11 @@
     </s:HGroup>
 
     <fx:Script><![CDATA[
-        import com.casmul.multinet.MNDirect
-        import com.casmul.multinet.MNDirectEvent
-        import com.casmul.multinet.MNUserInfo
-        import com.casmul.multinet.core.MNSession
-        import com.casmul.multinet.core.MNSessionEvent
+        import com.playphone.multinet.MNDirect
+        import com.playphone.multinet.MNDirectEvent
+        import com.playphone.multinet.MNUserInfo
+        import com.playphone.multinet.core.MNSession
+        import com.playphone.multinet.core.MNSessionEvent
 
         import mx.events.FlexEvent
 
