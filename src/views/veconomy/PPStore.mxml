@@ -2,6 +2,7 @@
 <s:VGroup xmlns:fx="http://ns.adobe.com/mxml/2009"
           xmlns:s="library://ns.adobe.com/flex/spark"
           xmlns:mx="mx.collections.*"
+          xmlns:controls="views.controls.*"
           width="100%"
           initialize="initializeHandler(event)">
     <s:states>
@@ -85,7 +86,7 @@
     <s:VGroup width="100%" includeIn="Buy" initialize="markReady(0)">
         <s:HGroup width="100%">
             <s:Label>VShop packs</s:Label>
-            <s:ComboBox id="vspacks" width="100%"/>
+            <controls:DropDown id="vspacks" width="100%"/>
         </s:HGroup>
         <s:Button width="100%" click="button1_clickHandler(event)">BUY!</s:Button>
     </s:VGroup>
@@ -176,7 +177,6 @@
                 }
                 vspacks.dataProvider = new ArrayList(combo_items);
                 vspacks.selectedIndex = 0;
-                vspacks.textInput.enabled = false;
             }
         }
 

@@ -1,7 +1,9 @@
 <?xml version="1.0"?>
 <s:VGroup xmlns:fx="http://ns.adobe.com/mxml/2009"
           xmlns:s="library://ns.adobe.com/flex/spark"
-          xmlns:mx="library://ns.adobe.com/flex/mx" width="100%"
+          xmlns:mx="library://ns.adobe.com/flex/mx"
+          xmlns:controls="views.controls.*"
+          width="100%"
           initialize="initializeHandler(event)">
 
     <s:states>
@@ -49,7 +51,7 @@
     </s:List>
 
     <s:VGroup includeIn="Manager" width="100%" initialize="markReady(1)">
-        <s:ComboBox id="items" width="100%"/>
+        <controls:DropDown id="items" width="100%"/>
         <s:HGroup width="100%">
             <s:TextInput id="to_add" width="100%"/>
             <s:Button width="100%" click="button1_clickHandler(event)">Add</s:Button>
@@ -58,7 +60,6 @@
             <s:TextInput id="to_remove" width="100%"/>
             <s:Button width="100%" click="button2_clickHandler(event)">Remove</s:Button>
         </s:HGroup>
-
     </s:VGroup>
 
     <fx:Script><![CDATA[
@@ -146,7 +147,6 @@
                 combo_items.push({label:pack.name, data:pack});
             }
 
-            items.textInput.editable = false;
             items.dataProvider = new ArrayList(combo_items);
             items.selectedIndex = 0;
         }
@@ -163,29 +163,31 @@
         private function button1_clickHandler(event: MouseEvent): void
         {
             var selectedItem: Object = items.dataProvider.getItemAt(items.selectedIndex);
-            var trId:int = MNDirect.virtualItemsProvider.getNewClientTransactionId();
-            CrossDemoFlash.showMessage( this, "Transaction ( id="+ trId + " ) started. " + to_add.text + " items will be added" );
-            MNDirect.virtualItemsProvider.reqAddPlayerVItem(selectedItem.data.id, int(to_add.text), trId );
+            var trId: int = MNDirect.virtualItemsProvider.getNewClientTransactionId();
+            CrossDemoFlash.showMessage(this,
+                                       "Transaction ( id=" + trId + " ) started. " + to_add.text + " items will be added");
+            MNDirect.virtualItemsProvider.reqAddPlayerVItem(selectedItem.data.id, int(to_add.text), trId);
         }
 
         private function button2_clickHandler(event: MouseEvent): void
         {
             var selectedItem: Object = items.dataProvider.getItemAt(items.selectedIndex);
-            var trId:int = MNDirect.virtualItemsProvider.getNewClientTransactionId();
-            CrossDemoFlash.showMessage( this, "Transaction ( id="+ trId + " ) started. " + to_remove.text + " items will be removed" );
-            MNDirect.virtualItemsProvider.reqAddPlayerVItem(selectedItem.data.id, -1 * int(to_remove.text), trId );
+            var trId: int = MNDirect.virtualItemsProvider.getNewClientTransactionId();
+            CrossDemoFlash.showMessage(this,
+                                       "Transaction ( id=" + trId + " ) started. " + to_remove.text + " items will be removed");
+            MNDirect.virtualItemsProvider.reqAddPlayerVItem(selectedItem.data.id, -1 * int(to_remove.text), trId);
         }
 
         private function onComplete(event: MNPluginEvent): void
         {
-            var info:TransactionInfo = event.params as TransactionInfo;
-            CrossDemoFlash.showMessage( this, "Transaction ( id="+ info.clientTransactionId + " ) completed" );
+            var info: TransactionInfo = event.params as TransactionInfo;
+            CrossDemoFlash.showMessage(this, "Transaction ( id=" + info.clientTransactionId + " ) completed");
         }
 
         private function onFail(event: MNPluginEvent): void
         {
-            CrossDemoFlash.showMessage( this, "Transaction ( id="+ event.params.clientTransactionId + " ) failed. " +
-                                              event.params.failReasonCode + ":" + event.params.errorMessage );
+            CrossDemoFlash.showMessage(this, "Transaction ( id=" + event.params.clientTransactionId + " ) failed. " +
+                                             event.params.failReasonCode + ":" + event.params.errorMessage);
         }
         ]]></fx:Script>
 </s:VGroup>

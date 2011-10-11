@@ -1,0 +1,99 @@
+<?xml version="1.0"?>
+<s:VGroup xmlns:fx="http://ns.adobe.com/mxml/2009"
+          xmlns:s="library://ns.adobe.com/flex/spark">
+    <s:Button id="dropdown" width="100%" click="button1_clickHandler(event)">Choose item</s:Button>
+
+    <fx:Script><![CDATA[
+        import mx.collections.ArrayList
+
+        import spark.components.List
+        import spark.events.IndexChangeEvent
+
+        private var listItems: List = null;
+        private var data: ArrayList;
+        private var index: int = 0;
+
+        public function set dataProvider(val: ArrayList): void
+        {
+            data = val;
+            if (listItems != null)
+            {
+                listItems.dataProvider = val;
+            }
+        }
+
+        public function get dataProvider(): ArrayList
+        {
+            if (listItems != null)
+            {
+                return ArrayList(listItems.dataProvider);
+            }
+            else
+            {
+                return data;
+            }
+        }
+
+        public function get selectedIndex(): int
+        {
+            if (listItems != null)
+            {
+                return listItems.selectedIndices[0];
+            }
+            else
+            {
+                return index;
+            }
+        }
+
+        public function set selectedIndex(val: int): void
+        {
+            index = val;
+            if (listItems != null)
+            {
+                var indicies: Vector.<int> = new Vector.<int>(1);
+                indicies.push(val);
+                listItems.selectedIndices = indicies;
+            }
+        }
+
+
+        private function button1_clickHandler(event: MouseEvent): void
+        {
+            if (listItems == null)
+            {
+                listItems = new List();
+                addElement(listItems)
+                listItems.dragEnabled = true;
+                listItems.itemRenderer = new ClassFactory(DDRenderer);
+                listItems.y = dropdown.height;
+                listItems.x = 0;
+                listItems.enabled = true;
+                listItems.visible = true;
+                listItems.width = dropdown.width;
+                listItems.height = 35*3;
+                listItems.addEventListener(IndexChangeEvent.CHANGE, items_changeHandler);
+                selectedIndex = index;
+                dataProvider = data;
+            }
+            else
+            {
+                removeElement( listItems );
+                listItems.enabled = false;
+                listItems.visible = false;
+                listItems = null;
+            }
+        }
+
+        private function items_changeHandler(event: IndexChangeEvent): void
+        {
+            dropdown.label = listItems.selectedItems[0].label;
+            index = listItems.selectedIndices[0];
+            removeElement( listItems );
+            listItems.enabled = false;
+            listItems.visible = false;
+            listItems = null;
+        }
+        ]]></fx:Script>
+</s:VGroup>
+
