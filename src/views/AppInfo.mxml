@@ -12,7 +12,7 @@
         <s:Label id="web_url"></s:Label>
         <s:Label fontWeight="bold">Smartfox (url:port)</s:Label>
         <s:Label id="sf_url"></s:Label>
-        <s:Label fontWeight="bold">Swf metadata:</s:Label>
+        <s:Label fontWeight="bold">Swf creation date:</s:Label>
         <s:Label id="swf_metadata"></s:Label>
     </s:VGroup>
 
@@ -41,7 +41,13 @@
             plist_url.text = xml.dict.string;
 
             var swfReader: SWFReader = new SWFReader(root.loaderInfo.bytes);
-            swf_metadata.text = swfReader.metadata;
+
+            var strMeta:String = swfReader.metadata.toXMLString();
+            var start:int = strMeta.search( "<dc:date>" );
+            var end:int = strMeta.search( "</dc:date>" );
+            var date:String = strMeta.substring( start+9, end );
+
+            swf_metadata.text = date;
         }
 
         private function onSettings(event: Event): void

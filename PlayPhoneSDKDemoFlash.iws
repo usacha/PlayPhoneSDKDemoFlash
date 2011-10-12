@@ -91,24 +91,64 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
+      <file leaf-file-name="Achievements.mxml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/views/Achievements.mxml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="3" column="58" selection-start="185" selection-end="185" vertical-scroll-proportion="-2.0689654">
+              <folding>
+                <marker date="1318418100780" expanded="true" signature="149:173" placeholder="{...}" />
+                <marker date="1318418100780" expanded="true" signature="254:281" placeholder="{...}" />
+                <marker date="1318418100780" expanded="true" signature="1105:1256" placeholder="{...}" />
+                <marker date="1318418100780" expanded="false" signature="1439:1676" placeholder="..." />
+                <marker date="1318418100780" expanded="true" signature="1753:2016" placeholder="{...}" />
+                <marker date="1318418100780" expanded="true" signature="1814:1866" placeholder="{...}" />
+                <marker date="1318418100780" expanded="true" signature="1896:2006" placeholder="{...}" />
+                <marker date="1318418100780" expanded="true" signature="2077:2551" placeholder="{...}" />
+                <marker date="1318418100780" expanded="true" signature="2170:2460" placeholder="{...}" />
+                <marker date="1318418100780" expanded="true" signature="2490:2541" placeholder="{...}" />
+                <marker date="1318418100780" expanded="true" signature="2611:2745" placeholder="{...}" />
+                <marker date="1318418100780" expanded="true" signature="2823:2867" placeholder="{...}" />
+                <marker date="1318418100780" expanded="true" signature="2936:2979" placeholder="{...}" />
+                <marker date="1318418100780" expanded="true" signature="3060:3156" placeholder="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AppInfo.mxml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/views/AppInfo.mxml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="41" column="0" selection-start="1512" selection-end="1512" vertical-scroll-proportion="-8.034483">
+              <folding>
+                <marker date="1318419237313" expanded="true" signature="149:173" placeholder="{...}" />
+                <marker date="1318419237313" expanded="false" signature="771:910" placeholder="..." />
+                <marker date="1318419237313" expanded="true" signature="987:1888" placeholder="{...}" />
+                <marker date="1318419237313" expanded="true" signature="1052:1153" placeholder="{...}" />
+                <marker date="1318419237313" expanded="true" signature="1183:1232" placeholder="{...}" />
+                <marker date="1318419237313" expanded="true" signature="1954:2164" placeholder="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="CrossDemoFlash.mxml" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/CrossDemoFlash.mxml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="151" column="52" selection-start="6620" selection-end="6620" vertical-scroll-proportion="0.2020202">
+            <state line="150" column="23" selection-start="6518" selection-end="6518" vertical-scroll-proportion="0.2886003">
               <folding>
-                <marker date="1318416220519" expanded="true" signature="201:225" placeholder="{...}" />
-                <marker date="1318416220519" expanded="true" signature="957:976" placeholder="{...}" />
-                <marker date="1318416220519" expanded="true" signature="1182:1202" placeholder="{...}" />
-                <marker date="1318416220519" expanded="true" signature="2060:2161" placeholder="{...}" />
-                <marker date="1318416220519" expanded="true" signature="4919:5553" placeholder="..." />
-                <marker date="1318416220519" expanded="true" signature="5633:5915" placeholder="{...}" />
-                <marker date="1318416220519" expanded="true" signature="6014:6190" placeholder="{...}" />
-                <marker date="1318416220519" expanded="true" signature="6267:6390" placeholder="{...}" />
-                <marker date="1318416220519" expanded="true" signature="6459:7457" placeholder="{...}" />
-                <marker date="1318416220519" expanded="true" signature="6973:7357" placeholder="//..." />
-                <marker date="1318416220519" expanded="true" signature="7534:7635" placeholder="{...}" />
-                <marker date="1318416220519" expanded="true" signature="7707:7828" placeholder="{...}" />
-                <marker date="1318416220519" expanded="true" signature="7753:7818" placeholder="{...}" />
+                <marker date="1318419353275" expanded="true" signature="201:225" placeholder="{...}" />
+                <marker date="1318419353275" expanded="true" signature="957:976" placeholder="{...}" />
+                <marker date="1318419353275" expanded="true" signature="1182:1202" placeholder="{...}" />
+                <marker date="1318419353275" expanded="true" signature="2060:2161" placeholder="{...}" />
+                <marker date="1318419353275" expanded="false" signature="4919:5553" placeholder="..." />
+                <marker date="1318419353275" expanded="true" signature="5633:5915" placeholder="{...}" />
+                <marker date="1318419353275" expanded="true" signature="6014:6190" placeholder="{...}" />
+                <marker date="1318419353275" expanded="true" signature="6267:6390" placeholder="{...}" />
+                <marker date="1318419353275" expanded="true" signature="6459:7525" placeholder="{...}" />
+                <marker date="1318419353275" expanded="true" signature="7041:7425" placeholder="//..." />
+                <marker date="1318419353275" expanded="true" signature="7602:7703" placeholder="{...}" />
+                <marker date="1318419353275" expanded="true" signature="7775:7896" placeholder="{...}" />
+                <marker date="1318419353275" expanded="true" signature="7821:7886" placeholder="{...}" />
               </folding>
             </state>
           </provider>
@@ -133,21 +173,21 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/../sdk_playphone/1.4.4/PlayPhoneMultiNet-Flash/com/playphone/multinet/utils/MNLocalStorage.as" />
         <option value="$PROJECT_DIR$/../sdk_playphone/1.4.4/PlayPhoneMultiNet-Flash/com/playphone/multinet/providers/MNVitemsProvider.as" />
         <option value="$PROJECT_DIR$/src/controls/MobileComboEvent.as" />
         <option value="$PROJECT_DIR$/src/controls/MobileComboBox.mxml" />
         <option value="$PROJECT_DIR$/src/controls.mxml" />
         <option value="$PROJECT_DIR$/src/views/controls/DropDown.mxml" />
-        <option value="$PROJECT_DIR$/src/views/AppInfo.mxml" />
         <option value="$PROJECT_DIR$/src/views/controls/DDRenderer.mxml" />
-        <option value="$PROJECT_DIR$/src/views/Achievements.mxml" />
         <option value="$PROJECT_DIR$/src/views/Leaderboards.mxml" />
         <option value="$PROJECT_DIR$/src/views/Social.mxml" />
         <option value="$PROJECT_DIR$/src/views/veconomy/VItems.mxml" />
         <option value="$PROJECT_DIR$/src/views/veconomy/UserItems.mxml" />
         <option value="$PROJECT_DIR$/src/views/SWFReader.as" />
         <option value="$PROJECT_DIR$/src/views/veconomy/PPStore.mxml" />
+        <option value="$PROJECT_DIR$/src/views/veconomy/VSPackItem.mxml" />
+        <option value="$PROJECT_DIR$/src/views/Achievements.mxml" />
+        <option value="$PROJECT_DIR$/src/views/AppInfo.mxml" />
         <option value="$PROJECT_DIR$/src/CrossDemoFlash.mxml" />
       </list>
     </option>
@@ -362,7 +402,7 @@
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="options.searchVisible" value="true" />
   </component>
-  <component name="RunManager" selected="AIR Mobile.emul">
+  <component name="RunManager" selected="Flex.PlayPhoneSDKDemoFlash">
     <configuration default="true" type="Remote" factoryName="Remote">
       <option name="USE_SOCKET_TRANSPORT" value="true" />
       <option name="SERVER_MODE" value="false" />
@@ -600,30 +640,6 @@
     </buildFile>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/views/Login.mxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="24.827587">
-          <folding>
-            <marker date="1318250506330" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1318250506330" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1318250506330" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1318250506330" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1318250506330" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1318250506330" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1318250506330" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1318250506330" expanded="true" signature="-1:-1" placeholder="//..." />
-            <marker date="1318250506330" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1318250506330" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1318250506330" expanded="true" signature="-1:-1" placeholder="//..." />
-            <marker date="1318250506330" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1318250506330" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1318250506330" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1318250506330" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1318250506330" expanded="true" signature="-1:-1" placeholder="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/views/Multinet.mxml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
@@ -636,61 +652,6 @@
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding>
             <marker date="1318237143879" expanded="true" signature="-1:-1" placeholder="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/views/Achievements.mxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="0" selection-start="947" selection-end="947" vertical-scroll-proportion="23.0">
-          <folding>
-            <marker date="1318415170386" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1318415170386" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1318415170386" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1318415170386" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1318415170386" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1318415170386" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1318415170386" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1318415170386" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1318415170386" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1318415170386" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1318415170386" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1318415170386" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1318415170386" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1318415170386" expanded="true" signature="-1:-1" placeholder="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/views/controls/DDRenderer.mxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="51" selection-start="335" selection-end="335" vertical-scroll-proportion="0.2886003">
-          <folding>
-            <marker date="1318414747996" expanded="true" signature="-1:-1" placeholder="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/views/controls/DropDown.mxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding>
-            <marker date="1318351447080" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1318351447080" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1318351447080" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1318351447080" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1318351447080" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1318351447080" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1318351447080" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1318351447080" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1318351447080" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1318351447080" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1318351447080" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1318351447080" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1318351447080" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1318351447080" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1318351447080" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1318351447080" expanded="true" signature="-1:-1" placeholder="{...}" />
           </folding>
         </state>
       </provider>
@@ -760,13 +721,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/views/veconomy/VSPackItem.mxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/views/veconomy/VItems.mxml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="146" column="0" selection-start="5049" selection-end="5049" vertical-scroll-proportion="-12.413794">
@@ -800,51 +754,49 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/views/veconomy/UserItems.mxml">
+    <entry file="file://$PROJECT_DIR$/src/views/SWFReader.as">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="31" selection-start="1419" selection-end="1419" vertical-scroll-proportion="17.931034">
+        <state line="29" column="19" selection-start="692" selection-end="692" vertical-scroll-proportion="0.53452116">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/controls/DDRenderer.mxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="51" selection-start="335" selection-end="335" vertical-scroll-proportion="-6.8965516">
           <folding>
-            <marker date="1318415310217" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1318415310217" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1318415310217" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1318415310217" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1318415310217" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1318415310217" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1318415310217" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1318415310217" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1318415310217" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1318415310217" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1318415310217" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1318415310217" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1318415310217" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1318415310217" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1318415310217" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1318415310217" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1318415310217" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1318415310217" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1318415310217" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1318415310217" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1318415310217" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1318415310217" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1318415310217" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1318415310217" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1318415310217" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1318415310217" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1318415310217" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1318414747996" expanded="true" signature="-1:-1" placeholder="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/views/SWFReader.as">
+    <entry file="file://$PROJECT_DIR$/src/views/controls/DropDown.mxml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="340" column="23" selection-start="10706" selection-end="10706" vertical-scroll-proportion="0.0">
-          <folding />
+        <state line="15" column="61" selection-start="557" selection-end="557" vertical-scroll-proportion="38.172413">
+          <folding>
+            <marker date="1318351447080" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1318351447080" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1318351447080" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1318351447080" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1318351447080" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1318351447080" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1318351447080" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1318351447080" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1318351447080" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1318351447080" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1318351447080" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1318351447080" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1318351447080" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1318351447080" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1318351447080" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1318351447080" expanded="true" signature="-1:-1" placeholder="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/views/veconomy/PPStore.mxml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="28" selection-start="1430" selection-end="1430" vertical-scroll-proportion="-8.068966">
+        <state line="36" column="28" selection-start="1430" selection-end="1430" vertical-scroll-proportion="46.896553">
           <folding>
             <marker date="1318415355190" expanded="true" signature="-1:-1" placeholder="{...}" />
             <marker date="1318415355190" expanded="true" signature="-1:-1" placeholder="{...}" />
@@ -884,23 +836,101 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/veconomy/UserItems.mxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="31" selection-start="342" selection-end="342" vertical-scroll-proportion="60.0">
+          <folding>
+            <marker date="1318415310217" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1318415310217" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1318415310217" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1318415310217" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1318415310217" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1318415310217" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1318415310217" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1318415310217" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1318415310217" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1318415310217" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1318415310217" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1318415310217" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1318415310217" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1318415310217" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1318415310217" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1318415310217" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1318415310217" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1318415310217" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1318415310217" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1318415310217" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1318415310217" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1318415310217" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1318415310217" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1318415310217" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1318415310217" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1318415310217" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1318415310217" expanded="true" signature="-1:-1" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/Achievements.mxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="58" selection-start="185" selection-end="185" vertical-scroll-proportion="-2.0689654">
+          <folding>
+            <marker date="1318418100780" expanded="true" signature="149:173" placeholder="{...}" />
+            <marker date="1318418100780" expanded="true" signature="254:281" placeholder="{...}" />
+            <marker date="1318418100780" expanded="true" signature="1105:1256" placeholder="{...}" />
+            <marker date="1318418100780" expanded="false" signature="1439:1676" placeholder="..." />
+            <marker date="1318418100780" expanded="true" signature="1753:2016" placeholder="{...}" />
+            <marker date="1318418100780" expanded="true" signature="1814:1866" placeholder="{...}" />
+            <marker date="1318418100780" expanded="true" signature="1896:2006" placeholder="{...}" />
+            <marker date="1318418100780" expanded="true" signature="2077:2551" placeholder="{...}" />
+            <marker date="1318418100780" expanded="true" signature="2170:2460" placeholder="{...}" />
+            <marker date="1318418100780" expanded="true" signature="2490:2541" placeholder="{...}" />
+            <marker date="1318418100780" expanded="true" signature="2611:2745" placeholder="{...}" />
+            <marker date="1318418100780" expanded="true" signature="2823:2867" placeholder="{...}" />
+            <marker date="1318418100780" expanded="true" signature="2936:2979" placeholder="{...}" />
+            <marker date="1318418100780" expanded="true" signature="3060:3156" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../sdks/AIR_2.7_SDK/frameworks/projects/framework/src/mx/collections/ArrayList.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="279" column="46" selection-start="8048" selection-end="8048" vertical-scroll-proportion="0.23608018">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/AppInfo.mxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="41" column="0" selection-start="1512" selection-end="1512" vertical-scroll-proportion="-8.034483">
+          <folding>
+            <marker date="1318419237313" expanded="true" signature="149:173" placeholder="{...}" />
+            <marker date="1318419237313" expanded="false" signature="771:910" placeholder="..." />
+            <marker date="1318419237313" expanded="true" signature="987:1888" placeholder="{...}" />
+            <marker date="1318419237313" expanded="true" signature="1052:1153" placeholder="{...}" />
+            <marker date="1318419237313" expanded="true" signature="1183:1232" placeholder="{...}" />
+            <marker date="1318419237313" expanded="true" signature="1954:2164" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/CrossDemoFlash.mxml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="151" column="52" selection-start="6620" selection-end="6620" vertical-scroll-proportion="0.2020202">
+        <state line="150" column="23" selection-start="6518" selection-end="6518" vertical-scroll-proportion="0.2886003">
           <folding>
-            <marker date="1318416220519" expanded="true" signature="201:225" placeholder="{...}" />
-            <marker date="1318416220519" expanded="true" signature="957:976" placeholder="{...}" />
-            <marker date="1318416220519" expanded="true" signature="1182:1202" placeholder="{...}" />
-            <marker date="1318416220519" expanded="true" signature="2060:2161" placeholder="{...}" />
-            <marker date="1318416220519" expanded="true" signature="4919:5553" placeholder="..." />
-            <marker date="1318416220519" expanded="true" signature="5633:5915" placeholder="{...}" />
-            <marker date="1318416220519" expanded="true" signature="6014:6190" placeholder="{...}" />
-            <marker date="1318416220519" expanded="true" signature="6267:6390" placeholder="{...}" />
-            <marker date="1318416220519" expanded="true" signature="6459:7457" placeholder="{...}" />
-            <marker date="1318416220519" expanded="true" signature="6973:7357" placeholder="//..." />
-            <marker date="1318416220519" expanded="true" signature="7534:7635" placeholder="{...}" />
-            <marker date="1318416220519" expanded="true" signature="7707:7828" placeholder="{...}" />
-            <marker date="1318416220519" expanded="true" signature="7753:7818" placeholder="{...}" />
+            <marker date="1318419353275" expanded="true" signature="201:225" placeholder="{...}" />
+            <marker date="1318419353275" expanded="true" signature="957:976" placeholder="{...}" />
+            <marker date="1318419353275" expanded="true" signature="1182:1202" placeholder="{...}" />
+            <marker date="1318419353275" expanded="true" signature="2060:2161" placeholder="{...}" />
+            <marker date="1318419353275" expanded="false" signature="4919:5553" placeholder="..." />
+            <marker date="1318419353275" expanded="true" signature="5633:5915" placeholder="{...}" />
+            <marker date="1318419353275" expanded="true" signature="6014:6190" placeholder="{...}" />
+            <marker date="1318419353275" expanded="true" signature="6267:6390" placeholder="{...}" />
+            <marker date="1318419353275" expanded="true" signature="6459:7525" placeholder="{...}" />
+            <marker date="1318419353275" expanded="true" signature="7041:7425" placeholder="//..." />
+            <marker date="1318419353275" expanded="true" signature="7602:7703" placeholder="{...}" />
+            <marker date="1318419353275" expanded="true" signature="7775:7896" placeholder="{...}" />
+            <marker date="1318419353275" expanded="true" signature="7821:7886" placeholder="{...}" />
           </folding>
         </state>
       </provider>
