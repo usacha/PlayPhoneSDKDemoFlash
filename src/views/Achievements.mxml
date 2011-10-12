@@ -8,14 +8,14 @@
         <s:itemRenderer>
             <fx:Component>
                 <s:ItemRenderer>
-                    <s:Rect id="item_bkg" left="0" right="0" top="2" bottom="0" height="35" width="100%">
+                    <s:Rect id="item_bkg" height="50" width="100%">
                         <s:fill>
                             <s:SolidColor color="0x999999" alpha="0"/>
                         </s:fill>
                     </s:Rect>
                     <s:HGroup>
-                        <s:Label id="achievement_id"/>
-                        <s:Label id="achievement_name"/>
+                        <s:Label id="achievement_id" verticalAlign="middle" height="50"/>
+                        <s:Label id="achievement_name" verticalAlign="middle" height="50"/>
                     </s:HGroup>
 
                     <fx:Script><![CDATA[
