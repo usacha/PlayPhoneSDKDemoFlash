@@ -9,26 +9,50 @@
                 <s:ItemRenderer>
                     <s:states>
                         <s:State name="normal"/>
+                        <s:State name="hovered"
+                                 enterState="state1_enterStateHandler(event)"
+                                 exitState="state1_exitStateHandler(event)"/>
+                        <s:State name="selected"
+                                 enterState="state1_enterStateHandler(event)"
+                                 exitState="state1_exitStateHandler(event)"/>
                     </s:states>
-                    <s:Rect height="50" width="100%">
+                    <s:Rect height="100%" width="100%">
                         <s:fill>
                             <s:SolidColor color="0x999999" alpha="0"/>
                         </s:fill>
                     </s:Rect>
-                    <s:HGroup>
-                        <s:Label id="user_id" verticalAlign="middle"/>
-                        <s:VGroup>
-                            <s:Label id="user_name" verticalAlign="top" height="50"/>
-                            <s:Label id="user_online" verticalAlign="bottom" height="50"/>
-                        </s:VGroup>
-                    </s:HGroup>
+                    <s:Label id="setting_name" verticalAlign="middle" height="50">Default</s:Label>
+
 
                     <fx:Script><![CDATA[
+                        import mx.events.FlexEvent
+
+                        import views.controls.SettingRenderer
+
+                        private var user_data: Object;
+                        private var additional: SettingRenderer;
+
+
                         override public function set data(value: Object): void
                         {
-                            user_id.text = value.friend_user_id.toString();
-                            user_name.text = value.friend_user_nick_name;
-                            user_online.text = value.friend_user_online_now ? "online" : "offline";
+                            user_data = value;
+                            if (value.name != null)
+                            {
+                                setting_name.text = value.name.toString();
+                            }
+                        }
+
+                        private function state1_enterStateHandler(event: FlexEvent): void
+                        {
+                            additional = new SettingRenderer();
+                            addElement(additional);
+                            additional.y = 50;
+                            additional.data = user_data;
+                        }
+
+                        private function state1_exitStateHandler(event: FlexEvent): void
+                        {
+                            removeElement(additional);
                         }
                         ]]></fx:Script>
                 </s:ItemRenderer>
@@ -42,7 +66,6 @@
         import com.playphone.multinet.providers.MNPluginEvent
 
         import mx.collections.ArrayList
-
         import mx.events.FlexEvent
 
         private function initializeHandler(event: FlexEvent): void
@@ -78,7 +101,7 @@
 
         private function onSettingsReady(event: MNPluginEvent): void
         {
-            settings_list.dataProvider = new ArrayList( MNDirect.gameSettingsProvider.getGameSettingsList() );
+            settings_list.dataProvider = new ArrayList(MNDirect.gameSettingsProvider.getGameSettingsList());
         }
         ]]></fx:Script>
 </s:VGroup>
