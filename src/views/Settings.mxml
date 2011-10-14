@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+<s:VGroup xmlns:fx="http://ns.adobe.com/mxml/2009"
+          xmlns:s="library://ns.adobe.com/flex/spark"
+          initialize="initializeHandler(event)"
+          width="100%">
+    <s:List id="settings_list" dragEnabled="true" width="100%" height="100%">
+        <s:itemRenderer>
+            <fx:Component>
+                <s:ItemRenderer>
+                    <s:states>
+                        <s:State name="normal"/>
+                    </s:states>
+                    <s:Rect height="50" width="100%">
+                        <s:fill>
+                            <s:SolidColor color="0x999999" alpha="0"/>
+                        </s:fill>
+                    </s:Rect>
+                    <s:HGroup>
+                        <s:Label id="user_id" verticalAlign="middle"/>
+                        <s:VGroup>
+                            <s:Label id="user_name" verticalAlign="top" height="50"/>
+                            <s:Label id="user_online" verticalAlign="bottom" height="50"/>
+                        </s:VGroup>
+                    </s:HGroup>
+
+                    <fx:Script><![CDATA[
+                        override public function set data(value: Object): void
+                        {
+                            user_id.text = value.friend_user_id.toString();
+                            user_name.text = value.friend_user_nick_name;
+                            user_online.text = value.friend_user_online_now ? "online" : "offline";
+                        }
+                        ]]></fx:Script>
+                </s:ItemRenderer>
+            </fx:Component>
+        </s:itemRenderer>
+    </s:List>
+    <fx:Script><![CDATA[
+        import com.playphone.multinet.MNDirect
+        import com.playphone.multinet.MNDirectEvent
+        import com.playphone.multinet.providers.MNGameSettingsProvider
+        import com.playphone.multinet.providers.MNPluginEvent
+
+        import mx.collections.ArrayList
+
+        import mx.events.FlexEvent
+
+        private function initializeHandler(event: FlexEvent): void
+        {
+            if (MNDirect.getSession() != null)
+            {
+                onSessionReady(null);
+            }
+            else
+            {
+                MNDirect.addEventListener(MNDirectEvent.onDirectSessionReady, onSessionReady);
+            }
+        }
+
+        private function onSessionReady(event: MNDirectEvent): void
+        {
+            checkSettings();
+        }
+
+        private function checkSettings(): void
+        {
+            if (MNDirect.gameSettingsProvider.isGameSettingListNeedUpdate())
+            {
+                MNDirect.gameSettingsProvider.addEventListener(MNGameSettingsProvider.onGameSettingsListDownloaded,
+                                                               onSettingsReady)
+                MNDirect.gameSettingsProvider.doGameSettingListUpdate();
+            }
+            else
+            {
+                onSettingsReady(null);
+            }
+        }
+
+        private function onSettingsReady(event: MNPluginEvent): void
+        {
+            settings_list.dataProvider = new ArrayList( MNDirect.gameSettingsProvider.getGameSettingsList() );
+        }
+        ]]></fx:Script>
+</s:VGroup>

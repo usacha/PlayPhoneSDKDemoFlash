@@ -20,21 +20,54 @@
         <s:itemRenderer>
             <fx:Component>
                 <s:ItemRenderer>
+                    <s:states>
+                        <s:State name="normal"/>
+                        <s:State name="hovered"
+                                 enterState="state1_enterStateHandler(event)"
+                                 exitState="state1_exitStateHandler(event)"/>
+                        <s:State name="selected"
+                                 enterState="state1_enterStateHandler(event)"
+                                 exitState="state1_exitStateHandler(event)"/>
+                    </s:states>
                     <s:Rect height="50" width="100%">
                         <s:fill>
                             <s:SolidColor color="0x999999" alpha="0"/>
                         </s:fill>
                     </s:Rect>
                     <s:HGroup>
+                        <s:Image id="item_img" height="50"/>
                         <s:Label id="item_id" verticalAlign="middle" height="50"/>
                         <s:Label id="item_name" verticalAlign="middle" height="50"/>
                     </s:HGroup>
 
                     <fx:Script><![CDATA[
+                        import com.playphone.multinet.MNDirect
+
+                        import mx.events.FlexEvent
+
+                        import views.controls.VItemRenderer
+
+                        private var user_data: Object;
+                        private var additional: VItemRenderer;
+
                         override public function set data(value: Object): void
                         {
+                            user_data = value;
+                            item_img.source = MNDirect.virtualItemsProvider.getVItemImageURL(value.id);
                             item_id.text = value.id;
                             item_name.text = value.name;
+                        }
+
+                        private function state1_enterStateHandler(event: FlexEvent): void
+                        {
+                            additional = new VItemRenderer();
+                            addElement(additional);
+                            additional.data = user_data;
+                        }
+
+                        private function state1_exitStateHandler(event: FlexEvent): void
+                        {
+                            removeElement(additional);
                         }
                         ]]></fx:Script>
                 </s:ItemRenderer>
@@ -47,21 +80,54 @@
         <s:itemRenderer>
             <fx:Component>
                 <s:ItemRenderer>
+                    <s:states>
+                        <s:State name="normal"/>
+                        <s:State name="hovered"
+                                 enterState="state1_enterStateHandler(event)"
+                                 exitState="state1_exitStateHandler(event)"/>
+                        <s:State name="selected"
+                                 enterState="state1_enterStateHandler(event)"
+                                 exitState="state1_exitStateHandler(event)"/>
+                    </s:states>
                     <s:Rect height="50" width="100%">
                         <s:fill>
                             <s:SolidColor color="0x999999" alpha="0"/>
                         </s:fill>
                     </s:Rect>
                     <s:HGroup>
+                        <s:Image id="curr_item_img" height="50"/>
                         <s:Label id="cur_id" verticalAlign="middle" height="50"/>
                         <s:Label id="cur_name" verticalAlign="middle" height="50"/>
                     </s:HGroup>
 
                     <fx:Script><![CDATA[
+                        import com.playphone.multinet.MNDirect
+
+                        import mx.events.FlexEvent
+
+                        import views.controls.VItemRenderer
+
+                        private var user_data: Object;
+                        private var additional: VItemRenderer;
+
                         override public function set data(value: Object): void
                         {
+                            user_data = value;
+                            curr_item_img.source = MNDirect.virtualItemsProvider.getVItemImageURL(value.id);
                             cur_id.text = value.id;
                             cur_name.text = value.name;
+                        }
+
+                        private function state1_enterStateHandler(event: FlexEvent): void
+                        {
+                            additional = new VItemRenderer();
+                            addElement(additional);
+                            additional.data = user_data;
+                        }
+
+                        private function state1_exitStateHandler(event: FlexEvent): void
+                        {
+                            removeElement(additional);
                         }
                         ]]></fx:Script>
                 </s:ItemRenderer>
@@ -75,7 +141,6 @@
         import com.playphone.multinet.providers.MNVitemsProvider
 
         import mx.collections.ArrayList
-
         import mx.events.FlexEvent
 
         import spark.events.IndexChangeEvent
@@ -123,11 +188,11 @@
             {
                 if ((item.model & 1) == 0)
                 {
-                    currencies.push( item );
+                    currencies.push(item);
                 }
             }
 
-            items_list.dataProvider = new ArrayList( currencies );
+            items_list.dataProvider = new ArrayList(currencies);
         }
 
         private function updateCurrencies(): void
@@ -139,11 +204,11 @@
             {
                 if ((item.model & 1) != 0)
                 {
-                    currencies.push( item );
+                    currencies.push(item);
                 }
             }
 
-            currencies_list.dataProvider = new ArrayList( currencies );
+            currencies_list.dataProvider = new ArrayList(currencies);
 
         }
 

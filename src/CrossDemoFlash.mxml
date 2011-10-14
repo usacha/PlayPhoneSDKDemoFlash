@@ -21,10 +21,11 @@
         <s:State name="Multinet"/>
         <s:State name="Social"/>
         <s:State name="AppInfo"/>
+        <s:State name="Settings"/>
     </s:states>
 
     <s:Button label="Go home"
-              includeIn="Login, Dashboard, VEconomy, Achievements, DashboardControl, Leaderboards, Cloud, Userinfo, Multinet, Social"
+              includeIn="Login, Dashboard, VEconomy, Achievements, DashboardControl, Leaderboards, Cloud, Userinfo, Multinet, Social, AppInfo, Settings"
               click="currentState='Home'"/>
 
     <s:Panel includeIn="Home" width="100%" height="100%" title="Home">
@@ -65,6 +66,7 @@
                         <views:ViewObject caption="Multinet basics" stateName="Multinet"/>
                         <views:ViewObject caption="Social graph" stateName="Social"/>
                         <views:ViewObject caption="Application info" stateName="AppInfo"/>
+                        <views:ViewObject caption="Settings info" stateName="Settings"/>
                     </s:ArrayList>
                 </s:dataProvider>
             </s:List>
@@ -105,13 +107,16 @@
         <views:AppInfo/>
     </s:Panel>
 
+    <s:Panel includeIn="Settings" width="100%" height="100%" title="Settings info">
+        <views:Settings/>
+    </s:Panel>
+
     <fx:Script><![CDATA[
         import com.playphone.multinet.MNDirect
         import com.playphone.multinet.MNDirectEvent
         import com.playphone.multinet.core.MNSession
         import com.playphone.multinet.core.MNSessionEvent
         import com.playphone.multinet.ui.MNWebUIAirStarter
-        import com.playphone.multinet.ui.MNWebUIStarter
         import com.playphone.multinet.ui.common.MNDirectButton
         import com.playphone.multinet.ui.common.MNDirectPopup
         import com.playphone.multinet.utils.MNLog
@@ -150,7 +155,7 @@
             MNLog.isDebug = true;
             MNDirect.init(10900, "ae2b10f2-248f58d9-c9654f24-37960337");
 //            MNDirect.init(5, "00000005-00000005-00000005-00000005");
-            MNDirect.attachUI(new MNWebUIStarter(this.stage));
+            MNDirect.attachUI(new MNWebUIAirStarter(this.stage));
             MNDirectPopup.init(MNDirectPopup.MNDIRECTPOPUP_NEW_HI_SCORES | MNDirectPopup.MNDIRECTPOPUP_ACHIEVEMENTS |
                                MNDirectPopup.MNDIRECTPOPUP_WELCOME, this.stage);
             MNDirectButton.init(MNDirectButton.MNDIRECTBUTTON_TOPRIGHT, this.stage);
