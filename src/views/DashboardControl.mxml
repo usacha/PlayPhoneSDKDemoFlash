@@ -1,6 +1,9 @@
 <?xml version="1.0"?>
 <s:VGroup xmlns:fx="http://ns.adobe.com/mxml/2009"
-          xmlns:s="library://ns.adobe.com/flex/spark">
+          xmlns:s="library://ns.adobe.com/flex/spark"
+          width="100%"
+          paddingLeft="5" paddingTop="5" paddingRight="5" gap="5"
+         >
     <s:Button width="100%" top="20" bottom="20" click="button1_clickHandler(event)">Login screen</s:Button>
     <s:Button width="100%" top="20" bottom="20" click="button2_clickHandler(event)">Leaderboards</s:Button>
     <s:Button width="100%" top="20" bottom="20" click="button3_clickHandler(event)">Achievements</s:Button>

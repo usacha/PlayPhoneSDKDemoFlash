@@ -20,6 +20,9 @@
                         <s:fill>
                             <s:SolidColor color="0x999999" alpha="0"/>
                         </s:fill>
+                        <s:stroke>
+                            <s:SolidColorStroke color="0xcccccc" weight="1"/>
+                        </s:stroke>
                     </s:Rect>
                     <s:Label id="setting_name" verticalAlign="middle" height="50">Default</s:Label>
 

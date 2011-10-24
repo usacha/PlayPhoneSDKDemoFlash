@@ -4,6 +4,23 @@
                xmlns:views="views.*"
                initialize="initializeHandler(event)" width="100%" height="100%">
 
+    <fx:Style>
+        .mainVGroup {
+            paddingLeft: "5";
+            paddingTop: "5";
+            paddingRight: "5"
+        }
+
+        .mainButton {
+            fontSize: 15px;
+            /* chromeColor:"blue"; */
+        }
+
+        .mainPanel {
+            paddingTop: 5px;
+            /* chromeColor:"blue"; */
+        }
+    </fx:Style>
     <s:layout>
         <s:VerticalLayout/>
     </s:layout>
@@ -24,9 +41,14 @@
         <s:State name="Settings"/>
     </s:states>
 
-    <s:Button label="Go home"
-              includeIn="Login, Dashboard, VEconomy, Achievements, DashboardControl, Leaderboards, Cloud, Userinfo, Multinet, Social, AppInfo, Settings"
-              click="currentState='Home'"/>
+    <s:Group styleName="mainPanel"
+             includeIn="Login, Dashboard, VEconomy, Achievements, DashboardControl, Leaderboards, Cloud, Userinfo, Multinet, Social, AppInfo, Settings"
+             width="100%">
+        <s:Button label="Go home" styleName="mainButton" left="5" top="5"
+                  includeIn="Login, Dashboard, VEconomy, Achievements, DashboardControl, Leaderboards, Cloud, Userinfo, Multinet, Social, AppInfo, Settings"
+                  click="currentState='Home'">
+        </s:Button>
+    </s:Group>
 
     <s:Panel includeIn="Home" width="100%" height="100%" title="Home">
         <s:VGroup width="100%" height="100%">
@@ -42,8 +64,11 @@
                                 <s:fill>
                                     <s:SolidColor color="0x999999" alpha="0" alpha.selected="0.6"/>
                                 </s:fill>
+                                <s:stroke>
+                                    <s:SolidColorStroke color="0xcccccc" weight="1"/>
+                                </s:stroke>
                             </s:Rect>
-                            <s:Label id="caption" verticalAlign="middle" width="100%" height="50"/>
+                            <s:Label paddingLeft="10" id="caption" verticalAlign="middle" width="100%" height="50"/>
                             <fx:Script><![CDATA[
                                 override public function set data(value: Object): void
                                 {
@@ -147,7 +172,6 @@
 
         private function initializeHandler(event: FlexEvent): void
         {
-            trace("Main initializeHandler");
             addEventListener(Event.ADDED_TO_STAGE, resizeHandler);
         }
 

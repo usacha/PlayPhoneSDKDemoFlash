@@ -2,7 +2,9 @@
 <s:VGroup xmlns:fx="http://ns.adobe.com/mxml/2009"
           xmlns:s="library://ns.adobe.com/flex/spark"
           initialize="initializeHandler(event)"
-          width="100%">
+          width="100%"
+          paddingLeft="5" paddingTop="5" paddingRight="5" gap="5"
+         >
     <s:Label>Put data key(integer value) here</s:Label>
     <s:TextInput id="cookie_key" width="100%"/>
 

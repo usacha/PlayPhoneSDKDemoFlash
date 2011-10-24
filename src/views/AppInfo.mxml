@@ -1,7 +1,9 @@
 <?xml version="1.0"?>
 <s:VGroup xmlns:fx="http://ns.adobe.com/mxml/2009"
           xmlns:s="library://ns.adobe.com/flex/spark"
-          initialize="initializeHandler(event)">
+          initialize="initializeHandler(event)"
+          paddingLeft="5" paddingTop="5" paddingRight="5" gap="5"
+        >
 
     <s:VGroup>
         <s:Label fontWeight="bold">SDK version</s:Label>
