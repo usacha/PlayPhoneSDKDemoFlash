@@ -1,25 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <s:VGroup xmlns:fx="http://ns.adobe.com/mxml/2009"
-          xmlns:s="library://ns.adobe.com/flex/spark" width="100%">
+          xmlns:s="library://ns.adobe.com/flex/spark" width="100%" left="5">
 
-    <s:Rect height="50" width="100%">
-        <s:fill>
-            <s:SolidColor color="0x999999" alpha="0"/>
-        </s:fill>
-        <s:stroke>
-            <s:SolidColorStroke color="0xcccccc" weight="1"/>
-        </s:stroke>
-    </s:Rect>
-
-    <s:HGroup left="5">
+    <s:HGroup>
         <s:Label>Category:</s:Label>
         <s:Label id="item_category" width="100%">-</s:Label>
     </s:HGroup>
-    <s:HGroup left="5">
+    <s:HGroup>
         <s:Label>Description:</s:Label>
         <s:Label id="item_description" width="100%">-</s:Label>
     </s:HGroup>
-    <s:HGroup left="5">
+    <s:HGroup>
         <s:Label>Param:</s:Label>
         <s:Label id="item_application_param" width="100%">-</s:Label>
     </s:HGroup>
