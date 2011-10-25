@@ -11,6 +11,12 @@
                 <s:ItemRenderer>
                     <s:states>
                         <s:State name="normal"/>
+                        <s:State name="hovered"
+                                 enterState="state1_enterStateHandler(event)"
+                                 exitState="state1_exitStateHandler(event)"/>
+                        <s:State name="selected"
+                                 enterState="state1_enterStateHandler(event)"
+                                 exitState="state1_exitStateHandler(event)"/>
                     </s:states>
                     <s:Rect height="50" width="100%">
                         <s:fill>
@@ -20,22 +26,44 @@
                             <s:SolidColorStroke color="0xcccccc" weight="1"/>
                         </s:stroke>
                     </s:Rect>
-                    <s:HGroup>
-                        <s:Label id="user_id" verticalAlign="middle"/>
-                        <s:VGroup>
-                                <s:Label id="user_name" verticalAlign="top" height="50"/>
-                                <s:Label id="user_online" verticalAlign="bottom" height="50"/>
+                    <s:HGroup height="50" verticalAlign="middle">
+                        <s:Image id="user_avatar" height="50"/>
+                        <s:VGroup verticalAlign="middle">
+                            <s:Label id="user_name" verticalAlign="top"/>
+                            <s:Label id="user_online" verticalAlign="bottom"/>
                         </s:VGroup>
                     </s:HGroup>
 
                     <fx:Script><![CDATA[
                         import com.playphone.multinet.core.data.MNWSBuddyListItem
 
+                        import mx.events.FlexEvent;
+
+                        import views.controls.FriendRenderer;
+
+                        private var user_data: Object;
+                        private var additional: FriendRenderer;
+
                         override public function set data(value: Object): void
                         {
-                            user_id.text = value.friend_user_id.toString();
-                            user_name.text = value.friend_user_nick_name;
-                            user_online.text = value.friend_user_online_now ? "online" : "offline";
+                            user_data = value;
+                            var friend: MNWSBuddyListItem = value as MNWSBuddyListItem;
+                            user_name.text = friend.friend_user_nick_name;
+                            user_online.text = friend.friend_user_online_now ? "online" : "offline";
+                            user_avatar.source = friend.friend_user_avatar_url;
+                        }
+
+                        private function state1_enterStateHandler(event: FlexEvent): void
+                        {
+                            additional = new FriendRenderer();
+                            addElement(additional);
+                            additional.y = 55;
+                            additional.data = user_data;
+                        }
+
+                        private function state1_exitStateHandler(event: FlexEvent): void
+                        {
+                            removeElement(additional);
                         }
                         ]]></fx:Script>
                 </s:ItemRenderer>
