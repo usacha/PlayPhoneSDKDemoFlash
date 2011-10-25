@@ -3,7 +3,10 @@
           xmlns:s="library://ns.adobe.com/flex/spark"
           initialize="userinfoInitializeHandler(event)"
           paddingLeft="5" paddingTop="5" paddingRight="5" gap="5"
+          width="100%"
         >
+    <s:Image id="user_img" height="80"/>
+
     <s:HGroup>
         <s:Label fontWeight="bold">User name:</s:Label>
         <s:Label id="user_name">---</s:Label>
@@ -58,6 +61,7 @@
             room_id.text = String(MNSession.instance.getCurrentRoomId());
             user_name.text = userinfo.userName;
             user_id.text = String(userinfo.userId);
+            user_img.source = userinfo.userAvatar;
         }
 
         private function onLogout(event: MNSessionEvent): void

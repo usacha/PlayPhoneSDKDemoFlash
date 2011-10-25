@@ -7,21 +7,24 @@
     <option name="TARGET_PLAYER_VERSION" value="10.2.0" />
     <option name="VERSION" value="3" />
   </component>
-  <component name="NewModuleRootManager" inherit-compiler-output="true">
+  <component name="NewModuleRootManager" inherit-compiler-output="false">
+    <output url="file://$MODULE_DIR$/out" />
+    <output-test url="file://$MODULE_DIR$/out_test" />
     <exclude-output />
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
+      <excludeFolder url="file://$MODULE_DIR$/res" />
     </content>
-    <content url="file://$MODULE_DIR$/../sdk_playphone/1.4.5/PlayPhoneMultiNet-Flash">
-      <sourceFolder url="file://$MODULE_DIR$/../sdk_playphone/1.4.5/PlayPhoneMultiNet-Flash" isTestSource="false" />
-      <excludeFolder url="file://$MODULE_DIR$/../sdk_playphone/1.4.5/PlayPhoneMultiNet-Flash/res" />
+    <content url="file://$MODULE_DIR$/../sdk_playphone/1.4.7/PlayPhoneMultiNet-Flash">
+      <sourceFolder url="file://$MODULE_DIR$/../sdk_playphone/1.4.7/PlayPhoneMultiNet-Flash" isTestSource="false" />
+      <excludeFolder url="file://$MODULE_DIR$/../sdk_playphone/1.4.7/PlayPhoneMultiNet-Flash/res" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/../sdk_playphone/1.4.4/PlayPhoneMultiNet-Flash/res/mn_direct_ui_plus.swc!/" />
+          <root url="jar://$MODULE_DIR$/../sdk_playphone/1.4.7/PlayPhoneMultiNet-Flash/res/mn_direct_ui_plus.swc!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
