@@ -14,7 +14,7 @@
     </s:states>
 
     <s:Button includeIn="PPStore, VItems, UserItems" width="100%" click="currentState='Main'">Back</s:Button>
-    <s:Button includeIn="Main" width="100%" styleName="mainButton" click="currentState='PPStore'">Playphone store</s:Button>
+    <s:Button includeIn="Main" width="100%" click="currentState='PPStore'">Playphone store</s:Button>
     <s:Button includeIn="Main" width="100%" click="currentState='VItems'">Virtual items</s:Button>
     <s:Button includeIn="Main" width="100%" click="currentState='UserItems'">User items</s:Button>
 
