@@ -33,7 +33,7 @@
                             <s:SolidColorStroke color="0xcccccc" weight="1"/>
                         </s:stroke>
                     </s:Rect>
-                    <s:HGroup>
+                    <s:HGroup left="5">
                         <s:Label id="cat_id" verticalAlign="middle" height="50"/>
                         <s:Label id="cat_name" verticalAlign="middle" height="50"/>
                     </s:HGroup>
@@ -61,7 +61,7 @@
                             <s:SolidColor color="0x999999" alpha="0"/>
                         </s:fill>
                     </s:Rect>
-                    <s:HGroup>
+                    <s:HGroup left="5">
                         <s:Image id="pack_img" height="50"/>
                         <s:Label id="pack_id" verticalAlign="middle" height="50"/>
                         <s:Label id="pack_name" verticalAlign="middle" height="50"/>

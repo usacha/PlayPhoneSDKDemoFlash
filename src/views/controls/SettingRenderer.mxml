@@ -2,19 +2,19 @@
 <s:VGroup xmlns:fx="http://ns.adobe.com/mxml/2009"
           xmlns:s="library://ns.adobe.com/flex/spark" width="100%">
 
-    <s:HGroup>
+    <s:HGroup left="5">
         <s:Label>Setting ID:</s:Label>
         <s:Label id="setting_id"/>
     </s:HGroup>
-    <s:HGroup>
+    <s:HGroup left="5">
         <s:Label>Leaderboard:</s:Label>
         <s:Label id="setting_leaderboard"/>
     </s:HGroup>
-    <s:HGroup>
+    <s:HGroup left="5">
         <s:Label>Multiplayer:</s:Label>
         <s:Label id="setting_multiplayer"/>
     </s:HGroup>
-    <s:HGroup>
+    <s:HGroup left="5">
         <s:Label>sysParams:</s:Label>
         <s:Label id="setting_params"/>
     </s:HGroup>

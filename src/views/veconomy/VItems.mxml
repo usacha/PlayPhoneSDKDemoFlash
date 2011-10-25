@@ -37,7 +37,7 @@
                             <s:SolidColorStroke color="0xcccccc" weight="1"/>
                         </s:stroke>
                     </s:Rect>
-                    <s:HGroup>
+                    <s:HGroup left="5">
                         <s:Image id="item_img" height="50"/>
                         <s:Label id="item_id" verticalAlign="middle" height="50"/>
                         <s:Label id="item_name" verticalAlign="middle" height="50"/>
@@ -100,7 +100,7 @@
                             <s:SolidColorStroke color="0xcccccc" weight="1"/>
                         </s:stroke>
                     </s:Rect>
-                    <s:HGroup>
+                    <s:HGroup left="5">
                         <s:Image id="curr_item_img" height="50"/>
                         <s:Label id="cur_id" verticalAlign="middle" height="50"/>
                         <s:Label id="cur_name" verticalAlign="middle" height="50"/>

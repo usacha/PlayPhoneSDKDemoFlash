@@ -11,15 +11,15 @@
         </s:stroke>
     </s:Rect>
 
-    <s:HGroup>
+    <s:HGroup left="5">
         <s:Label>Category:</s:Label>
         <s:Label id="item_category" width="100%">-</s:Label>
     </s:HGroup>
-    <s:HGroup>
+    <s:HGroup left="5">
         <s:Label>Description:</s:Label>
         <s:Label id="item_description" width="100%">-</s:Label>
     </s:HGroup>
-    <s:HGroup>
+    <s:HGroup left="5">
         <s:Label>Param:</s:Label>
         <s:Label id="item_application_param" width="100%">-</s:Label>
     </s:HGroup>
