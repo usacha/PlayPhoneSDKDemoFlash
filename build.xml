@@ -36,7 +36,7 @@
     <target name="move game to server" depends="compile Mathcomp Game">
         <scp port="22" trust="true"
              todir="ausachov@pluto.vn.ua:/home/ausachov/anton.pluto.vn.ua/web/some"
-             keyfile="C:\ausachev_o.ppk" sftp="true">
+             keyfile="D:\Work\keys\ausachev_o.ppk" sftp="true">
             <fileset dir="${basedir}\out">
                 <include name="**/*.swf"/>
             </fileset>

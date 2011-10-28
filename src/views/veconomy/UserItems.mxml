@@ -198,8 +198,8 @@
         {
             var selectedItem: Object = items.dataProvider.getItemAt(items.selectedIndex);
             var trId: int = MNDirect.virtualItemsProvider.getNewClientTransactionId();
-            CrossDemoFlash.showMessage(this,
-                                       "Transaction ( id=" + trId + " ) started. " + to_add.text + " items will be added");
+            PlayPhoneSDKDemoFlash.showMessage(this,
+                                              "Transaction ( id=" + trId + " ) started. " + to_add.text + " items will be added");
             MNDirect.virtualItemsProvider.reqAddPlayerVItem(selectedItem.data.id, int(to_add.text), trId);
         }
 
@@ -207,21 +207,21 @@
         {
             var selectedItem: Object = items.dataProvider.getItemAt(items.selectedIndex);
             var trId: int = MNDirect.virtualItemsProvider.getNewClientTransactionId();
-            CrossDemoFlash.showMessage(this,
-                                       "Transaction ( id=" + trId + " ) started. " + to_remove.text + " items will be removed");
+            PlayPhoneSDKDemoFlash.showMessage(this,
+                                              "Transaction ( id=" + trId + " ) started. " + to_remove.text + " items will be removed");
             MNDirect.virtualItemsProvider.reqAddPlayerVItem(selectedItem.data.id, -1 * int(to_remove.text), trId);
         }
 
         private function onComplete(event: MNPluginEvent): void
         {
             var info: TransactionInfo = event.params as TransactionInfo;
-            CrossDemoFlash.showMessage(this, "Transaction ( id=" + info.clientTransactionId + " ) completed");
+            PlayPhoneSDKDemoFlash.showMessage(this, "Transaction ( id=" + info.clientTransactionId + " ) completed");
         }
 
         private function onFail(event: MNPluginEvent): void
         {
-            CrossDemoFlash.showMessage(this, "Transaction ( id=" + event.params.clientTransactionId + " ) failed. " +
-                                             event.params.failReasonCode + ":" + event.params.errorMessage);
+            PlayPhoneSDKDemoFlash.showMessage(this, "Transaction ( id=" + event.params.clientTransactionId + " ) failed. " +
+                                                    event.params.failReasonCode + ":" + event.params.errorMessage);
         }
         ]]></fx:Script>
 </s:VGroup>

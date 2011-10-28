@@ -95,7 +95,7 @@
 
         private function onError(event: MNWSDefHandlerEvent): void
         {
-            CrossDemoFlash.showMessage(this, event.params.message);
+            PlayPhoneSDKDemoFlash.showMessage(this, event.params.message);
         }
 
         private function onComplete(event: MNWSDefHandlerEvent): void

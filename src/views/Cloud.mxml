@@ -35,12 +35,12 @@
                 }
                 else
                 {
-                    CrossDemoFlash.showMessage(this, "User should be logged in!");
+                    PlayPhoneSDKDemoFlash.showMessage(this, "User should be logged in!");
                 }
             }
             else
             {
-                CrossDemoFlash.showMessage(this, "MNSession is not initialized!");
+                PlayPhoneSDKDemoFlash.showMessage(this, "MNSession is not initialized!");
             }
         }
 
@@ -71,25 +71,25 @@
 
         private function downloadError(event: MNPluginEvent): void
         {
-            CrossDemoFlash.showMessage(this,
-                                       "Could not download cookie (id=" + event.params.key + ") " + event.params.error);
+            PlayPhoneSDKDemoFlash.showMessage(this,
+                                              "Could not download cookie (id=" + event.params.key + ") " + event.params.error);
         }
 
         private function downloadComplete(event: MNPluginEvent): void
         {
-            CrossDemoFlash.showMessage(this,
-                                       "Cookie (id=" + event.params.key + " value=" + event.params.cookie + ") download succsessfuly");
+            PlayPhoneSDKDemoFlash.showMessage(this,
+                                              "Cookie (id=" + event.params.key + " value=" + event.params.cookie + ") download succsessfuly");
         }
 
         private function uploadError(event: MNPluginEvent): void
         {
-            CrossDemoFlash.showMessage(this,
-                                       "Could not upload cookie (id=" + event.params.key + ") " + event.params.error);
+            PlayPhoneSDKDemoFlash.showMessage(this,
+                                              "Could not upload cookie (id=" + event.params.key + ") " + event.params.error);
         }
 
         private function uploadComplete(event: MNPluginEvent): void
         {
-            CrossDemoFlash.showMessage(this, "Cookie uploaded succsessfuly");
+            PlayPhoneSDKDemoFlash.showMessage(this, "Cookie uploaded succsessfuly");
         }
 
         private function button2_clickHandler(event: MouseEvent): void
@@ -98,16 +98,16 @@
             {
                 if (MNSession.instance.isLoggedIn)
                 {
-                    MNDirect.gameCookiesProvider.downloadUserCookie( int(dwcookie_key.text) );
+                    MNDirect.gameCookiesProvider.downloadUserCookie(int(dwcookie_key.text));
                 }
                 else
                 {
-                    CrossDemoFlash.showMessage(this, "User should be logged in!");
+                    PlayPhoneSDKDemoFlash.showMessage(this, "User should be logged in!");
                 }
             }
             else
             {
-                CrossDemoFlash.showMessage(this, "MNSession is not initialized!");
+                PlayPhoneSDKDemoFlash.showMessage(this, "MNSession is not initialized!");
             }
         }
         ]]></fx:Script>

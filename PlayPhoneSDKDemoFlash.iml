@@ -2,7 +2,7 @@
 <module type="Flex" version="4">
   <component name="Flex.Build.Configuration">
     <option name="DO_BUILD" value="true" />
-    <option name="MAIN_CLASS" value="CrossDemoFlash" />
+    <option name="MAIN_CLASS" value="PlayPhoneSDKDemoFlash" />
     <option name="OUTPUT_FILE_NAME" value="PlayPhoneSDKDemoFlash.swf" />
     <option name="TARGET_PLAYER_VERSION" value="10.2.0" />
     <option name="VERSION" value="3" />
@@ -15,16 +15,15 @@
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/res" />
     </content>
-    <content url="file://$MODULE_DIR$/../sdk_playphone/1.4.7/PlayPhoneMultiNet-Flash">
-      <sourceFolder url="file://$MODULE_DIR$/../sdk_playphone/1.4.7/PlayPhoneMultiNet-Flash" isTestSource="false" />
-      <excludeFolder url="file://$MODULE_DIR$/../sdk_playphone/1.4.7/PlayPhoneMultiNet-Flash/res" />
+    <content url="file://$MODULE_DIR$/../sdk_playphone/1.4.5/PlayPhoneMultiNet-Flash">
+      <sourceFolder url="file://$MODULE_DIR$/../sdk_playphone/1.4.5/PlayPhoneMultiNet-Flash" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/../sdk_playphone/1.4.7/PlayPhoneMultiNet-Flash/res/mn_direct_ui_plus.swc!/" />
+          <root url="jar://$MODULE_DIR$/../sdk_playphone/1.4.5/PlayPhoneMultiNet-Flash/res/mn_direct_ui_plus.swc!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />

@@ -226,7 +226,7 @@
             MNDirect.virtualShopProvider.execCheckoutVShopPacks([obj.data.id], [1],
                                                                 MNDirect.virtualItemsProvider.getNewClientTransactionId());
         }
-        
+
         private function onShowDashboard(event: Event): void
         {
             MNDirectHelper.showDashboard();
@@ -239,13 +239,13 @@
 
         private function onTransactionComplete(event: MNPluginEvent): void
         {
-            CrossDemoFlash.showMessage(this, "Pack( id= " + event.params.items_to_add[0] + " ) succsessfully bought");
+            PlayPhoneSDKDemoFlash.showMessage(this, "Pack( id= " + event.params.items_to_add[0] + " ) succsessfully bought");
         }
 
         private function onTransactionError(event: MNPluginEvent): void
         {
-            CrossDemoFlash.showMessage(this, "Errort occurred due buying pack code: " +
-                                             event.params.error_code + " " + event.params.error_message);
+            PlayPhoneSDKDemoFlash.showMessage(this, "Errort occurred due buying pack code: " +
+                                                    event.params.error_code + " " + event.params.error_message);
         }
         ]]></fx:Script>
 

@@ -161,7 +161,6 @@
         {
             MNLog.isDebug = true;
             MNDirect.init(10900, "ae2b10f2-248f58d9-c9654f24-37960337");
-//            MNDirect.init(5, "00000005-00000005-00000005-00000005");
             MNDirect.attachUI(new MNWebUIAirStarter(this.stage));
             MNDirectPopup.init(MNDirectPopup.MNDIRECTPOPUP_NEW_HI_SCORES | MNDirectPopup.MNDIRECTPOPUP_ACHIEVEMENTS |
                                MNDirectPopup.MNDIRECTPOPUP_WELCOME, this.stage);
